@@ -1,0 +1,4 @@
+[build]
+base = "service_mart_web/"
+publish = "service_mart_web/build/"
+command = "npm build"
