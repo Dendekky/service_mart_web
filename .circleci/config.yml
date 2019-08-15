@@ -9,8 +9,8 @@ workflows:
           requires:
             - react/install
 #      - react/test:
-#          requires:
-#           - react/install
+          requires:
+           - react/install
 #      - react/coverage:
-#          requires:
-#           - react/install
+         requires:
+           - react/install
