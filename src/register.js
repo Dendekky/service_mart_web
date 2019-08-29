@@ -1,9 +1,9 @@
 /* eslint-disable linebreak-style */
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import Register from './register';
+// import Login from './login';
 
-export default class Login extends Component {
+export default class Register extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -24,7 +24,7 @@ export default class Login extends Component {
 
   onSubmit(event) {
     event.preventDefault();
-    fetch('http://localhost:3000/api/login', {
+    fetch('http://localhost:3000/api/register', {
       method: 'POST',
       body: JSON.stringify(this.state),
       headers: { 'Content-Type': 'application/json' }
@@ -36,9 +36,9 @@ export default class Login extends Component {
 
   render() {
     return (
-      <div>
+        <div>
         <form onSubmit={this.onSubmit}>
-        <h1>Login To Your Vendor Account!</h1>
+        <h1>Signup For Your Vendor Account!</h1>
         <div>
         <input
           type="email"
@@ -60,16 +60,16 @@ export default class Login extends Component {
         />
         </div>
         <div>
-       <input type="submit" value="Login" />
+       <input type="submit" value="Register" />
        </div>
        <p className="gapp-intro">{this.state.apiResponse}</p>
       </form>
       <div>
-        <h2>Don't have an account?</h2>
-        <Link to='/register'>Sign Up</Link>
+          <h2>Already have an account</h2>
+          <Link to='/'>Login</Link>
       </div>
       {/* <Router>
-      <Route path='/register' component={Register}></Route>
+      <Route path='/login' component={Login}></Route>
       </Router> */}
       </div>
     );

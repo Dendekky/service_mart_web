@@ -1,36 +1,27 @@
 /* eslint-disable linebreak-style */
-import React, { Component } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-// import Login from './login';
+import Login from './login';
+import Register from './register';
 // import logo from './logo.svg';
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { apiResponse: '' };
-  }
+function App() {
+  // callAPI() {
+  //   fetch('http://localhost:3000/api/')
+  //     .then(res => res.text())
+  //     .then(res => this.setState({ apiResponse: res }))
+  //     .catch(err => err);
+  // }
 
-  callAPI() {
-    fetch('http://localhost:3000/api/')
-      .then(res => res.text())
-      .then(res => this.setState({ apiResponse: res }))
-      .catch(err => err);
-  }
-
-  componentDidMount() {
-    this.callAPI();
-  }
-
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title"> Welcome to React</h1>
-        </header>
-        <p className="App-intro">{this.state.apiResponse}</p>
-      </div>
-    );
-  }
+  // componentDidMount() {
+  //   this.callAPI();
+  // }
+  return (
+      <Router>
+      <Route path='/register' component={Register}></Route>
+      <Route exact path='/' component={Login}></Route>
+      </Router>
+  );
 }
 // function App() {
 //   return (
