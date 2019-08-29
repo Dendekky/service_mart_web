@@ -1,7 +1,7 @@
 /* eslint-disable linebreak-style */
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import Login from './login';
+// import Login from './login';
 // import logo from './logo.svg';
 
 class App extends Component {
