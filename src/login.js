@@ -36,14 +36,15 @@ export default class Login extends Component {
 
   render() {
     return (
-      <div>
+      <div className='login_main_div'>
+        <img className='login_img' src={'/public/05.png'} />
         <form onSubmit={this.onSubmit}>
         <h1>Login To Your Vendor Account!</h1>
         <div>
         <input
           type="email"
           name="email"
-          placeholder="Enter email"
+          placeholder="Enter your email"
           value={this.state.email}
           onChange={this.handleInputChange}
           required
@@ -53,7 +54,7 @@ export default class Login extends Component {
         <input
           type="password"
           name="password"
-          placeholder="Enter password"
+          placeholder="Enter your password"
           value={this.state.password}
           onChange={this.handleInputChange}
           required
@@ -64,8 +65,8 @@ export default class Login extends Component {
        </div>
        <p className="gapp-intro">{this.state.apiResponse}</p>
       </form>
-      <div>
-        <h2>Don't have an account?</h2>
+      <div className='login_register_div'>
+        <span>Don't have an account?</span>
         <Link to='/register'>Sign Up</Link>
       </div>
       {/* <Router>
