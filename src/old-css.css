@@ -1,0 +1,64 @@
+
+
+
+h1{
+    text-align: center;
+}
+
+.landing_page_body_div1 {
+    background: url("06.jpg");
+    height: 300px; 
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+}
+
+.landing_page_body_div1 h1 {
+    text-align: center;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+}
+
+.landing_page_body_div3 h2 {
+    margin: 24px;
+}
+
+.landing_page_body_div5 {
+    text-align: center;
+}
+
+.landing_page_body_div5 button {
+    border-radius: 10%;
+    text-align: center;
+    font-size: 24px;
+    background-color: yellowgreen;
+
+}
+
+.landing_page_body_div7 {
+    text-align: center;
+}
+
+.landing_page_body_div7 button {
+    border-radius: 10%;
+    text-align: center;
+    font-size: 24px;
+    background-color: yellowgreen;
+
+}
+
+a:hover,
+:active{
+    color: white;
+    font-weight: bold;
+  }
+
+.wallet_div2 h2 {
+    height: 36px;
+    text-align: left;
+    position: relative;
+}
+

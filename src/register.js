@@ -1,7 +1,6 @@
 /* eslint-disable linebreak-style */
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-// import Login from './login';
 
 export default class Register extends Component {
   constructor(props) {
@@ -22,16 +21,22 @@ export default class Register extends Component {
     });
   }
 
-  onSubmit(event) {
+  async onSubmit(event) {
     event.preventDefault();
-    fetch('http://localhost:3000/api/register', {
-      method: 'POST',
-      body: JSON.stringify(this.state),
-      headers: { 'Content-Type': 'application/json' }
-    })
-      .then(res => res.text())
-      .then(res => this.setState({ apiResponse: res }))
-      .catch(err => err);
+    try {
+      const response = await fetch('http://localhost:3000/api/register', {
+        method: 'POST',
+        body: JSON.stringify(this.state),
+        headers: { 'Content-Type': 'application/json' },
+      });
+      if (!response.ok) {
+        throw Error(response.statusText);
+      }
+      const res = await response.text();
+      this.setState({ apiResponse: res });
+    } catch (err) {
+      console.log(err);
+    }
   }
 
   render() {
@@ -69,9 +74,6 @@ export default class Register extends Component {
           <span>Already have an account</span>
           <Link to='/'>Login</Link>
       </div>
-      {/* <Router>
-      <Route path='/login' component={Login}></Route>
-      </Router> */}
       </div>
     );
   }

@@ -1,7 +1,7 @@
 /* eslint-disable linebreak-style */
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import Register from './register';
+import LoginApi from '../service/index';
 
 export default class Login extends Component {
   constructor(props) {
@@ -22,16 +22,24 @@ export default class Login extends Component {
     });
   }
 
-  onSubmit(event) {
+  // consider axios for api calls
+
+  async onSubmit(event) {
     event.preventDefault();
-    fetch('http://localhost:3000/api/login', {
-      method: 'POST',
-      body: JSON.stringify(this.state),
-      headers: { 'Content-Type': 'application/json' }
-    })
-      .then(res => res.text())
-      .then(res => this.setState({ apiResponse: res }))
-      .catch(err => err);
+    try {
+      const response = await fetch('http://localhost:3000/api/login', {
+        method: 'POST',
+        body: JSON.stringify(this.state),
+        headers: { 'Content-Type': 'application/json' },
+      });
+      if (!response.ok) {
+        throw Error(response.statusText);
+      }
+      const res = await response.text();
+      this.setState({ apiResponse: res });
+    } catch (err) {
+      console.log(err);
+    }
   }
 
   render() {
@@ -69,9 +77,6 @@ export default class Login extends Component {
         <span>Don't have an account?</span>
         <Link to='/register'>Sign Up</Link>
       </div>
-      {/* <Router>
-      <Route path='/register' component={Register}></Route>
-      </Router> */}
       </div>
     );
   }
