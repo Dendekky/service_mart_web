@@ -1,9 +1,10 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 const NavBar = () => <div className="nav-group" >
-    <a href='ggg.html'>
+    <Link to='/'>
         <img src={'/public/05.png'}/>
-        </a>
+        </Link>
     <a href='hdgh.html'>
         <button>search</button>
     </a>

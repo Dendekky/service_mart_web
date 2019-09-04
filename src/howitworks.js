@@ -1,17 +1,8 @@
-import React from 'react'
-import './index.css';
+/* eslint-disable linebreak-style */
+import React from 'react';
 
-const HowItWorks=()=>{
-return <div>
-    <header >
-<div class="nav-group" >
-    <a href='ggg.html'><img src="05.png"/></a>
-    <a href='hdgh.html'><button>search</button></a>
-    <h1>Job Listings</h1>
-    <a href='hdgh.html'><button>Menu Bar</button></a>
-    </div>
-    </header>
-<body>
+const HowItWorks = () => <div>
+
 <div>
 <h1>Sit back, We'll take it from here</h1>
     <p>Get your project managed and <br/> by Servicemart Professionals<br/>with optimum speed, efficiency and 99%<br/>quality assurance </p>
@@ -49,41 +40,6 @@ return <div>
     <h2>Can I give a poor rating?</h2>
 
 </div>
-</body>
-<footer>
-<div>
-    <h3>Company</h3>
-    <a href='#'>About</a>
-    <a href='#'>How it works</a>
-    <a href='#'>Login</a>
-    <a href='#'>Available jobs</a>
-</div>
-<div>
-    <h3>Popular Service</h3>
-    <a href='#'>Makeup</a>
-    <a href='#'>Photography</a>
-    <a href='#'>Catering</a>
-    <a href='#'>Plumbing</a>
-    <a href='#'>Photocopying</a>
-</div>
-<div>
-    <h3>Contact Us</h3>
-    <a href='#'>Facebook</a>
-    <a href='#'>Instagram</a>
-    <a href='#'>Twitter</a>
-    <a href='#'>Email</a>
-    <a href='#'>Whatsapp</a>
-</div>
-<div class="footer-form">
-    <p>Don’t tell anyone, Enter your email address to receive secret deals on both Job listings and vendor offerings.</p>
-    <form class="signup" name="signup">
-        <p><input type="email" name="email" class="inputText" required placeholder="Enter your email address"/></p>
-        <input type="submit" value="Subscribe"/>
-        <p>2019 - Servicemart All Rights Reserved</p>
-    </form>
-</div>
-</footer>
-</div> 
-}
+</div>;
 
 export default HowItWorks;

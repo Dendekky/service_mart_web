@@ -5,8 +5,8 @@ const Footer = () => <div className="footer-group" >
 <div>
     <h3>Company</h3>
     <a href='#'>About</a>
-    <a href='#'>How it works</a>
-    <a href='#'>Login</a>
+    <Link to='/howitworks'>How it works</Link>
+    <Link to='/'>Login</Link>
     <a href='#'>Available jobs</a>
 </div>
 <div>

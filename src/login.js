@@ -1,7 +1,7 @@
 /* eslint-disable linebreak-style */
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import LoginApi from '../service/index';
+// import Service from '../service/index';
 
 export default class Login extends Component {
   constructor(props) {
@@ -24,8 +24,13 @@ export default class Login extends Component {
 
   // consider axios for api calls
 
-  async onSubmit(event) {
+  onSubmit(event) {
     event.preventDefault();
+    this.LoginApi();
+  }
+
+  // So this is the api method exported to the service directory
+  async LoginApi() {
     try {
       const response = await fetch('http://localhost:3000/api/login', {
         method: 'POST',
@@ -75,7 +80,7 @@ export default class Login extends Component {
       </form>
       <div className='login_register_div'>
         <span>Don't have an account?</span>
-        <Link to='/register'>Sign Up</Link>
+        <Link to='/register'>Sign Up in a second</Link>
       </div>
       </div>
     );
