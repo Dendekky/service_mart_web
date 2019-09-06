@@ -9,7 +9,6 @@ export default class Login extends Component {
     this.state = {
       email: '',
       password: '',
-      apiResponse: '',
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
