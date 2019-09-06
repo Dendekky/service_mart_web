@@ -4,26 +4,26 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 const Footer = () => <div className="footer-group" >
 <div>
     <h3>Company</h3>
-    <a href='#'>About</a>
+    <Link to='/howitworks'>About</Link>
     <Link to='/howitworks'>How it works</Link>
-    <Link to='/'>Login</Link>
-    <a href='#'>Available jobs</a>
+    <Link to='/login'>Login</Link>
+    <Link to='#'>Available jobs</Link>
 </div>
 <div>
     <h3>Popular Service</h3>
-    <a href='#'>Makeup</a>
-    <a href='#'>Photography</a>
-    <a href='#'>Catering</a>
-    <a href='#'>Plumbing</a>
-    <a href='#'>Photocopying</a>
+    <Link to='#'>Makeup</Link>
+    <Link to='#'>Photography</Link>
+    <Link to='#'>Catering</Link>
+    <Link to='#'>Plumbing</Link>
+    <Link to='#'>Photocopying</Link>
 </div>
 <div>
     <h3>Contact Us</h3>
-    <a href='#'>Facebook</a>
-    <a href='#'>Instagram</a>
-    <a href='#'>Twitter</a>
-    <a href='#'>Email</a>
-    <a href='#'>Whatsapp</a>
+    <Link to='#'>Facebook</Link>
+    <Link to='#'>Instagram</Link>
+    <Link to='#'>Twitter</Link>
+    <Link to='#'>Email</Link>
+    <Link to='#'>Whatsapp</Link>
 </div>
 <div className="footer-form">
     <p>Don’t tell anyone, Enter your email address to receive secret deals on both Job listings and vendor offerings.</p>

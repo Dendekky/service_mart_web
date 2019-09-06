@@ -70,9 +70,9 @@ export default class Register extends Component {
        </div>
        <p className="gapp-intro">{this.state.apiResponse}</p>
       </form>
-      <div>
-          <span>Already have an account</span>
-          <Link to='/'>Login</Link>
+      <div className="register_login_div">
+          <span>Already have an account?</span>
+          <Link to='/login'>Login</Link>
       </div>
       </div>
     );
