@@ -1,7 +1,7 @@
 /* eslint-disable linebreak-style */
 import React from 'react';
 
-const HowItWorks = () => <div>
+const HowItWorks = () => <div className='howitworks_div'>
 
 <div>
 <h1>Sit back, We'll take it from here</h1>
@@ -10,7 +10,7 @@ const HowItWorks = () => <div>
 </div>
     
 <div>
-    <h1>How It Works</h1>
+    <h1>HOW IT WORKS</h1>
     <h2>1. Describe what you want</h2>
     <p>Let us know what service you are looking<br/>for. We offer more than 25 different services<br/>for events, homes and businesses</p>
     <h2>2. Make online deposit</h2>

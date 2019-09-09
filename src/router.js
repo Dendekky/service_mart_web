@@ -9,6 +9,7 @@ import HowItWorks from './howitworks';
 import Homepage from './homepage';
 import Vendor from './vendor';
 
+// TODO: Switch API call handlers to the service directory
 const RouterFile = () => <Router>
     <div>
     <NavBar />

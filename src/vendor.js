@@ -7,7 +7,7 @@ export default class Vendor extends React.Component {
     this.state = {
       agency_name: '',
       location: '',
-      email: '',
+      agency_email: '',
       tel_no: '',
       service_category: '',
       bio: '',
@@ -22,7 +22,7 @@ export default class Vendor extends React.Component {
       [name]: value,
     });
   }
-  //   consider axios for api calls
+  //  TODO: Consider axios for api calls
 
   onSubmit(event) {
     event.preventDefault();
@@ -75,9 +75,9 @@ export default class Vendor extends React.Component {
 
                 <p>Email Address </p>
                 <input
-                type="email"
-                name="email"
-                value={this.state.email}
+                type="agency_email"
+                name="agency_email"
+                value={this.state.agency_email}
                 onChange={this.handleInputChange}
                 placeholder="Email Address (e.g Joe@yahoo.com)"
                 required/><br/>

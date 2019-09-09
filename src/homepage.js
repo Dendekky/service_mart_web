@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCog } from '@fortawesome/free-solid-svg-icons';
 
-const Homepage = () => <div style={{ background: '#ffffff' }}>
+const Homepage = () => <div className='homepage_div'>
 
         <div className="landing_page_body_div1">
             <h1>Discover The Best Deals for Your Next Event</h1>
