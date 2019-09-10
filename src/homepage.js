@@ -1,7 +1,9 @@
+/* eslint-disable linebreak-style */
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCog } from '@fortawesome/free-solid-svg-icons';
+import VendorList from '../service';
 
 const Homepage = () => <div className='homepage_div'>
 
@@ -36,11 +38,8 @@ const Homepage = () => <div className='homepage_div'>
         </div>
         <div className="landing_page_body_div4">
             <h1>Recommended for you</h1>
-            <div>
-            <img src={'/public/03.png'} alt="Event Planner"/>
-            <img src={'/public/02.png'} alt="Event Planner"/>
-            <img src={'/public/04.png'} alt="Event Planner"/>
-            </div>
+            <VendorList/>
+            <Link to='/vendorlist'>See more...</Link>
         </div>
         <div className="landing_page_body_div5">
             <h1>Join For Free</h1>
@@ -54,7 +53,7 @@ const Homepage = () => <div className='homepage_div'>
         </div>
         <div className="landing_page_body_div7">
             <h1>Start Exploring<br/>or<br/>Let us do it for you</h1>
-            <button>Get Started</button>
+            <Link to='/login'>Get Started</Link>
         </div>
         
     </div>;

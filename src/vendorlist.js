@@ -1,7 +1,7 @@
 /* eslint-disable linebreak-style */
 import React from 'react';
 
-export default class VendorList extends React.Component {
+export default class VendorDisp extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -19,7 +19,7 @@ export default class VendorList extends React.Component {
     const { vendorlists } = this.state;
     return (
       <ul>
-        {vendorlists.filter(vendorlist => vendorlist.id <= 3).map(vendorlist => <li key={vendorlist.id}>
+        {vendorlists.map(vendorlist => <li key={vendorlist.id}>
             <p>{vendorlist.agency_name}</p>
             <p>{vendorlist.service_category}</p>
           </li>)}

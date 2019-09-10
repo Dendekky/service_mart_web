@@ -8,12 +8,14 @@ import Footer from './footer';
 import HowItWorks from './howitworks';
 import Homepage from './homepage';
 import Vendor from './vendor';
+import VendorDisp from './vendorlist';
 
 // TODO: Switch API call handlers to the service directory
 const RouterFile = () => <Router>
     <div>
     <NavBar />
     <Route path='/vendor' component={Vendor}></Route>
+    <Route path='/vendorlist' component={VendorDisp}></Route>
     <Route path='/howitworks' component={HowItWorks}></Route>
     <Route path='/register' component={Register}></Route>
     <Route path='/login' component={Login}></Route>
