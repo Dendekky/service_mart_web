@@ -79,7 +79,7 @@ export default class Login extends Component {
       </form>
       <div className='login_register_div'>
         <span>Don't have an account?</span>
-        <Link to='/register'>Sign Up in a second</Link>
+        <Link to='/register' className='link'>Sign Up in a second</Link>
       </div>
       </div>
     );

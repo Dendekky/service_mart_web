@@ -71,7 +71,7 @@ export default class Register extends Component {
       </form>
       <div className="register_login_div">
           <span>Already have an account?</span>
-          <Link to='/login'>Login</Link>
+          <Link to='/login'className='link'>Login</Link>
       </div>
       </div>
     );

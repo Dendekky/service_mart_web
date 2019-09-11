@@ -1,5 +1,6 @@
 /* eslint-disable linebreak-style */
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default class VendorDisp extends React.Component {
   constructor(props) {
@@ -20,7 +21,7 @@ export default class VendorDisp extends React.Component {
     return (
       <ul>
         {vendorlists.map(vendorlist => <li key={vendorlist.id}>
-            <p>{vendorlist.agency_name}</p>
+            <Link to='#' className='link'><p>{vendorlist.agency_name}</p></Link>
             <p>{vendorlist.service_category}</p>
           </li>)}
       </ul>
