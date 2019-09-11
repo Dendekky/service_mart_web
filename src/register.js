@@ -1,6 +1,6 @@
 /* eslint-disable linebreak-style */
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export default class Register extends Component {
   constructor(props) {
