@@ -6,6 +6,7 @@ export default class Register extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      fullname: '',
       email: '',
       password: '',
     };
@@ -46,6 +47,16 @@ export default class Register extends Component {
         <h1>Signup For Your Vendor Account!</h1>
         <div>
         <input
+          type="text"
+          name="fullname"
+          placeholder="Enter Full name"
+          value={this.state.fullname}
+          onChange={this.handleInputChange}
+          required
+        />
+        </div>
+        <div>
+        <input
           type="email"
           name="email"
           placeholder="Enter email"
@@ -71,7 +82,7 @@ export default class Register extends Component {
       </form>
       <div className="register_login_div">
           <span>Already have an account?</span>
-          <Link to='/login'className='link'>Login</Link>
+          <Link to='/login'>Login</Link>
       </div>
       </div>
     );
