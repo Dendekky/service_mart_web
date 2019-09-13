@@ -21,7 +21,7 @@ export default class VendorDisp extends React.Component {
     return (
       <ul>
         {vendorlists.map(vendorlist => <li key={vendorlist.id}>
-            <Link to='#' className='link'><p>{vendorlist.agency_name}</p></Link>
+            <Link to={`/vendorlist/${vendorlist.id}`} className='link'>{vendorlist.agency_name}</Link>
             <p>{vendorlist.service_category}</p>
           </li>)}
       </ul>
