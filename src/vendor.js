@@ -9,6 +9,7 @@ export default class Vendor extends React.Component {
       location: '',
       agency_email: '',
       tel_no: '',
+      job_specification: '',
       service_category: '',
       bio: '',
     };
@@ -90,13 +91,33 @@ export default class Vendor extends React.Component {
                 onChange={this.handleInputChange}
                 placeholder="Phone Number"/><br/>
 
-                <p>Service Category</p>
+                <p>What do you do?</p>
                 <input
                 type="text"
+                name="job_specification"
+                value={this.state.job_specification}
+                onChange={this.handleInputChange}
+                placeholder="e.g Baker, Shoemaker, Event Planner "/><br/>
+
+                <p>What category does this belong ?</p>
+                <select
                 name="service_category"
                 value={this.state.service_category}
                 onChange={this.handleInputChange}
-                placeholder="Service Category"/><br/>
+                >
+                  <option selected disabled >Service Category</option>
+                  <option>Fashion</option>
+                  <option>Technology</option>
+                  <option>Branding</option>
+                  <option>Events</option>
+                  <option>Rentals</option>
+                  <option>Food</option>
+                  <option>Electronics</option>
+                  <option>Medicine</option>
+                  <option>Laundry</option>
+                  <option>Media</option>
+                  <option>Others</option>
+                </select><br/>
 
                 <p>Short Bio (Sell yourself in 120 characters or less) </p>
                 <input

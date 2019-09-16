@@ -49,9 +49,8 @@ export default class Login extends Component {
   render() {
     return (
       <div className='login_main_div'>
-        <img className='login_img' src={'/public/05.png'} />
         <form onSubmit={this.onSubmit}>
-        <h1>Login To Your Vendor Account!</h1>
+        <p>Login To Your Vendor Account!</p>
         <div>
         <input
           type="email"
@@ -73,7 +72,7 @@ export default class Login extends Component {
         />
         </div>
         <div>
-       <input type="submit" value="Login" />
+       <input className="button" type="submit" value="Login" />
        </div>
        <p className="gapp-intro">{this.state.apiResponse}</p>
       </form>

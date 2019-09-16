@@ -7,6 +7,15 @@
     text-decoration: none;
 }
 
+.button{
+    height:60px                !important;
+    box-sizing: border-box     !important;
+    width: 345px               !important;
+    padding: 10px              !important;
+    background-color:#F27B1F !important;
+    color: white             !important;
+}
+
 .rec_vend {
     p {
         font-weight: bold;
@@ -33,7 +42,11 @@
     text-align: center;
     input{
         width: 300px;
-        margin: 8px;
+        margin: 20px;
+        height: 10px;
+        border-radius: 10px;
+        background: #EEEEEE;
+        text-align: center;
         padding: 20px;
     }
 }
@@ -105,24 +118,10 @@ h1{
 
 .landing_page_body_div5 {
     text-align: center;
-    button {
-        border-radius: 10%;
-        text-align: center;
-        font-size: 24px;
-        background-color: yellowgreen;
-    
-    }
-    
 }
 
 .landing_page_body_div7 {
     text-align: center;
-    button {
-        border-radius: 10%;
-        text-align: center;
-        font-size: 24px;
-        background-color: yellowgreen;
-    }
 }
 
 .vendor_signup_div {

@@ -42,9 +42,8 @@ export default class Register extends Component {
   render() {
     return (
       <div className='login_main_div'>
-      <img className='login_img' src={'/public/05.png'} />
         <form onSubmit={this.onSubmit}>
-        <h1>Signup For Your Vendor Account!</h1>
+        <p>Signup For Your Vendor Account!</p>
         <div>
         <input
           type="text"
@@ -76,13 +75,13 @@ export default class Register extends Component {
         />
         </div>
         <div>
-       <input type="submit" value="Register" />
+       <input className="button" type="submit" value="Register" />
        </div>
        <p className="gapp-intro">{this.state.apiResponse}</p>
       </form>
       <div className="register_login_div">
           <span>Already have an account?</span>
-          <Link to='/login'>Login</Link>
+          <Link className="link" to='/login'>Login</Link>
       </div>
       </div>
     );
