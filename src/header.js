@@ -1,19 +1,61 @@
-import React from 'react';
+/* eslint-disable linebreak-style */
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch, faBars } from '@fortawesome/free-solid-svg-icons';
+import { faSearch, faBars, faCapsules } from '@fortawesome/free-solid-svg-icons';
+import ResponsiveMenu from 'react-responsive-navbar';
 
 const NavBar = () => <div className="nav-group" >
-    <Link to='/'>
+      <Link to='/'>
         <img src={'/public/05.png'}/>
         </Link>
     <Link to='#'>
     <FontAwesomeIcon icon={faSearch} />
     </Link>
-    <h1>Job Listings</h1>
-    <Link to='#'>
-    <FontAwesomeIcon icon={faBars} />
-    </Link>
+      <ResponsiveMenu
+        menuOpenButton={<div className="open-menu-icon"> <FontAwesomeIcon icon={faBars} /> </div>}
+        menuCloseButton={<div className="close-menu-icon"> <FontAwesomeIcon icon={faCapsules} /> </div>}
+        changeMenuOn="500px"
+        largeMenuClassName="desktop-menu"
+        smallMenuClassName="mobile-menu"
+        menu={
+          <div>
+    <Link className="span link">Job Listings</Link>
+    <Link to='/howitworks'className="span link">How it Works</Link>
+    <Link to='#'className="span link">Categories</Link>
+    <Link to='/login' className="span link">Login</Link>
+    <Link to='register'className="span link">Signup</Link>
+    <Link to='/vendor' className="span link">Become a Vendor</Link>
+          </div>
+        }
+      />
     </div>;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const NavBar = () => <div className="nav-group" >
+//     <Link to='/'>
+//         <img src={'/public/05.png'}/>
+//         </Link>
+//     <Link to='#'>
+//     <FontAwesomeIcon icon={faSearch} />
+//     </Link>
+//     <h1>Job Listings</h1>
+//     <Link to='#'>
+//     <FontAwesomeIcon icon={faBars} />
+//     </Link>
+//     </div>;
 
 export default NavBar;
