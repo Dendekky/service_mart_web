@@ -1,29 +1,29 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Footer = () => <div className="footer-group" >
 <div>
     <h3>Company</h3>
-    <a href='#'>About</a>
-    <Link to='/howitworks'>How it works</Link>
-    <Link to='/'>Login</Link>
-    <a href='#'>Available jobs</a>
+    <Link to='/howitworks' className='link'>About</Link>
+    <Link to='/howitworks' className='link'>How it works</Link>
+    <Link to='/login' className='link'>Login</Link>
+    <Link to='/vendorlist' className='link'>Available jobs</Link>
 </div>
 <div>
     <h3>Popular Service</h3>
-    <a href='#'>Makeup</a>
-    <a href='#'>Photography</a>
-    <a href='#'>Catering</a>
-    <a href='#'>Plumbing</a>
-    <a href='#'>Photocopying</a>
+    <Link to='/vendorlist' className='link'>Makeup</Link>
+    <Link to='/vendorlist' className='link'>Photography</Link>
+    <Link to='/vendorlist' className='link'>Catering</Link>
+    <Link to='/vendorlist' className='link'>Plumbing</Link>
+    <Link to='/vendorlist' className='link'>Photocopying</Link>
 </div>
 <div>
     <h3>Contact Us</h3>
-    <a href='#'>Facebook</a>
-    <a href='#'>Instagram</a>
-    <a href='#'>Twitter</a>
-    <a href='#'>Email</a>
-    <a href='#'>Whatsapp</a>
+    <Link to='/' className='link'>Facebook</Link>
+    <Link to='/' className='link'>Instagram</Link>
+    <Link to='/' className='link'>Twitter</Link>
+    <Link to='/' className='link'>Email</Link>
+    <Link to='/' className='link'>Whatsapp</Link>
 </div>
 <div className="footer-form">
     <p>Don’t tell anyone, Enter your email address to receive secret deals on both Job listings and vendor offerings.</p>

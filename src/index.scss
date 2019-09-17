@@ -1,10 +1,31 @@
 *{
     font-size: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.link {
+    text-decoration: none;
+}
+
+.button{
+    height:60px                !important;
+    box-sizing: border-box     !important;
+    width: 345px               !important;
+    padding: 10px              !important;
+    background-color:#F27B1F !important;
+    color: white             !important;
+}
+
+.rec_vend {
+    p {
+        font-weight: bold;
+        font-size: 24px;
+    }
 }
 
 .nav-group {
     display: flex;
-    border: 1px solid #5c5c5c;
+    border: 0px solid #5c5c5c;
     width: 100%;
     align-items: center;
     justify-content: space-around;
@@ -21,12 +42,24 @@
     text-align: center;
     input{
         width: 300px;
-        margin: 8px;
+        margin: 20px;
+        height: 10px;
+        border-radius: 10px;
+        background: #EEEEEE;
+        text-align: center;
         padding: 20px;
     }
 }
 
 .login_register_div {
+    width: 100%;
+    span {
+        color: black;
+        margin-right: 8px;
+    }
+}
+
+.register_login_div {
     width: 100%;
     span {
         color: black;
@@ -42,7 +75,6 @@
     justify-content: center;
     align-content: center;
     margin-top: 48px;
-    grid-template-columns: 30% 30% 30%;
 }
 
 .footer-group div {
@@ -53,66 +85,63 @@
     margin-bottom: 10px;
 }
 
+h1{
+    text-align: center;
+}
 
-// h1{
-//     text-align: center;
-// }
+.homepage_div {
+    text-align: center;
+}
 
-// .landing_page_body_div1 {
-//     background: url("06.jpg");
-//     height: 300px; 
-//     background-size: cover;
-//     position: relative;
-//     z-index: 1;
-// }
+.landing_page_body_div1 {
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("/public/06.jpg");
+    height: 300px; 
+    background-size: cover;
+    position: relative;
+    h1 {
+        text-align: center;
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: black;
+    }
+}
 
-// .landing_page_body_div1 h1 {
-//     text-align: center;
-//     position: relative;
-//     top: 50%;
-//     left: 50%;
-//     transform: translate(-50%, -50%);
-//     color: black;
-// }
+.landing_page_body_div3_blt{
+    margin: 24px;
+    text-align: center;
+    h2{
+        display: inline-block;
+    }
+}
 
-// .landing_page_body_div3 h2 {
-//     margin: 24px;
-// }
+.landing_page_body_div5 {
+    text-align: center;
+}
 
-// .landing_page_body_div5 {
-//     text-align: center;
-// }
+.landing_page_body_div7 {
+    text-align: center;
+}
 
-// .landing_page_body_div5 button {
-//     border-radius: 10%;
-//     text-align: center;
-//     font-size: 24px;
-//     background-color: yellowgreen;
+.vendor_signup_div {
+    display: flex;
+    padding: 8px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    input{
+        width: 300px;
+        margin: 8px;
+        padding: 20px;
+    }
+}
 
-// }
+.howitworks_div {
+    text-align: center;
+}
 
-// .landing_page_body_div7 {
-//     text-align: center;
-// }
-
-// .landing_page_body_div7 button {
-//     border-radius: 10%;
-//     text-align: center;
-//     font-size: 24px;
-//     background-color: yellowgreen;
-
-// }
-
-// a:hover,
-// :active{
-//     color: white;
-//     font-weight: bold;
-//   }
-
-// .wallet_div2 h2 {
-//     height: 36px;
-//     text-align: left;
-//     position: relative;
-// }
-
+.VendorInfo {
+    color: red;
+}
 

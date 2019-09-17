@@ -9,7 +9,6 @@ export default class Login extends Component {
     this.state = {
       email: '',
       password: '',
-      apiResponse: '',
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
@@ -50,9 +49,8 @@ export default class Login extends Component {
   render() {
     return (
       <div className='login_main_div'>
-        <img className='login_img' src={'/public/05.png'} />
         <form onSubmit={this.onSubmit}>
-        <h1>Login To Your Vendor Account!</h1>
+        <p>Login To Your Vendor Account!</p>
         <div>
         <input
           type="email"
@@ -74,13 +72,13 @@ export default class Login extends Component {
         />
         </div>
         <div>
-       <input type="submit" value="Login" />
+       <input className="button" type="submit" value="Login" />
        </div>
        <p className="gapp-intro">{this.state.apiResponse}</p>
       </form>
       <div className='login_register_div'>
         <span>Don't have an account?</span>
-        <Link to='/register'>Sign Up in a second</Link>
+        <Link to='/register' className='link'>Sign Up in a second</Link>
       </div>
       </div>
     );

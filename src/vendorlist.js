@@ -1,7 +1,8 @@
 /* eslint-disable linebreak-style */
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-export default class VendorList extends React.Component {
+export default class VendorDisp extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -18,12 +19,12 @@ export default class VendorList extends React.Component {
   render() {
     const { vendorlists } = this.state;
     return (
-      <div>
-        {vendorlists.filter(vendorlist => vendorlist.id <= 3).map(vendorlist => <div className='rec_vend' key={vendorlist.id}>
-            <p>{vendorlist.agency_name}</p>
-            <span>{vendorlist.service_category}</span>
-          </div>)}
-      </div>
+      <ul>
+        {vendorlists.map(vendorlist => <li key={vendorlist.id}>
+            <Link to={`/vendorlist/${vendorlist.id}`} className='link'>{vendorlist.agency_name}</Link>
+            <p>{vendorlist.service_category}</p>
+          </li>)}
+      </ul>
     );
   }
 }

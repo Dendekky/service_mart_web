@@ -1,14 +1,14 @@
 /* eslint-disable linebreak-style */
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export default class Register extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      fullname: '',
       email: '',
       password: '',
-      apiResponse: '',
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
@@ -42,9 +42,18 @@ export default class Register extends Component {
   render() {
     return (
       <div className='login_main_div'>
-      <img className='login_img' src={'/public/05.png'} />
         <form onSubmit={this.onSubmit}>
-        <h1>Signup For Your Vendor Account!</h1>
+        <p>Signup For Your Vendor Account!</p>
+        <div>
+        <input
+          type="text"
+          name="fullname"
+          placeholder="Enter Full name"
+          value={this.state.fullname}
+          onChange={this.handleInputChange}
+          required
+        />
+        </div>
         <div>
         <input
           type="email"
@@ -66,13 +75,13 @@ export default class Register extends Component {
         />
         </div>
         <div>
-       <input type="submit" value="Register" />
+       <input className="button" type="submit" value="Register" />
        </div>
        <p className="gapp-intro">{this.state.apiResponse}</p>
       </form>
-      <div>
-          <span>Already have an account</span>
-          <Link to='/'>Login</Link>
+      <div className="register_login_div">
+          <span>Already have an account?</span>
+          <Link className="link" to='/login'>Login</Link>
       </div>
       </div>
     );
