@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCog } from '@fortawesome/free-solid-svg-icons';
-import VendorList from '../service';
+import VendorList from './vendorpages/vendorshowcase';
 
 const Homepage = () => <div className='homepage_div'>
 
@@ -29,7 +29,7 @@ const Homepage = () => <div className='homepage_div'>
             <FontAwesomeIcon icon={faCog} />
             <h2>Valuable Projects</h2>
             </div>
-                <p>Find professionals and agencies who are specialized in the field that you want</p>
+            <p>Find professionals and agencies who are specialized in the field that you want</p>
             <div className="landing_page_body_div3_blt">
             <FontAwesomeIcon icon={faCog} />
             <h2>Customer Support</h2>

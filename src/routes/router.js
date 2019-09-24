@@ -1,15 +1,15 @@
 /* eslint-disable linebreak-style */
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import Login from './login';
-import Register from './register';
-import NavBar from './header';
-import Footer from './footer';
-import HowItWorks from './howitworks';
-import Homepage from './homepage';
-import Vendor from './vendor';
-import VendorDisp from './vendorlist';
-import VendorInfo from './vendorinfo';
+import Login from '../auth/login';
+import Register from '../auth/register';
+import NavBar from '../header_footer/header';
+import Footer from '../header_footer/footer';
+import HowItWorks from '../pages/howitworks';
+import Homepage from '../pages/homepage';
+import Vendor from '../pages/vendorpages/vendorform';
+import VendorDisp from '../pages/vendorpages/vendorlist';
+import VendorInfo from '../pages/vendorpages/vendorinfo';
 
 // TODO: Switch API call handlers to the service directory
 const RouterFile = () => <Router>
