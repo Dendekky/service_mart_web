@@ -10,6 +10,8 @@ import Homepage from '../pages/homepage';
 import Vendor from '../pages/vendorpages/vendorform';
 import VendorDisp from '../pages/vendorpages/vendorlist';
 import VendorInfo from '../pages/vendorpages/vendorinfo';
+import CategoryList from '../pages/vendorpages/vendorcategory';
+import CategoryInfo from '../pages/vendorpages/vendorcategoryinfo';
 
 // TODO: Switch API call handlers to the service directory
 const RouterFile = () => <Router>
@@ -18,6 +20,8 @@ const RouterFile = () => <Router>
     <Route path='/vendor' component={Vendor}></Route>
     <Route exact path='/vendorlist' component={VendorDisp}></Route>
     <Route path='/vendorlist/:VendorId' component={VendorInfo}></Route>
+    <Route exact path='/vendorcategory' component={CategoryList}></Route>
+    <Route path='/vendorcategory/:Category' component={CategoryInfo}></Route>
     <Route path='/howitworks' component={HowItWorks}></Route>
     <Route path='/register' component={Register}></Route>
     <Route path='/login' component={Login}></Route>

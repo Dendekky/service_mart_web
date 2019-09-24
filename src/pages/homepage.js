@@ -48,11 +48,6 @@ const Homepage = () => <div className='homepage_div'>
             <p>Join over 1000 people in getting high paying jobs on servicemart today</p>
             <Link to='/vendor' className='link'>Join Now</Link>
         </div>
-        <div className="landing_page_body_div6">
-            <h1>Verified Reviews</h1>
-            <p>More than 100 Verified Reviews provided by Servicemart Customers.</p>
-            <section>Some verified content Some verified content Some verified content Some verified content Some verified content Some verified content</section>
-        </div>
         <div className="landing_page_body_div7">
             <h1>Start Exploring<br/>or<br/>Let us do it for you</h1>
             <Link to='/login' className='link'>Get Started</Link>

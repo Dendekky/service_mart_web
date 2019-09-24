@@ -1,5 +1,7 @@
 /* eslint-disable linebreak-style */
 import React from 'react';
+import { Link } from 'react-router-dom';
+import './vendor.scss';
 
 export default class VendorList extends React.Component {
   constructor(props) {
@@ -20,7 +22,7 @@ export default class VendorList extends React.Component {
     return (
       <div>
         {vendorlists.filter(vendorlist => vendorlist.id <= 3).map(vendorlist => <div className='rec_vend' key={vendorlist.id}>
-            <p>{vendorlist.agency_name}</p>
+        <Link to={`/vendorlist/${vendorlist.id}`} className='link'><p>{vendorlist.agency_name}</p></Link>
             <span>{vendorlist.service_category}</span>
           </div>)}
       </div>

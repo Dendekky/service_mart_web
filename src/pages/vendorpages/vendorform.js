@@ -1,5 +1,6 @@
 /* eslint-disable linebreak-style */
 import React from 'react';
+import './vendor.scss';
 
 export default class Vendor extends React.Component {
   constructor(props) {
