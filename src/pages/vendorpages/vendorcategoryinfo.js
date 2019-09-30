@@ -54,10 +54,8 @@ class CategoryInfo extends React.Component {
 
 
     return (
-        <div className="category_list">
-        <ul>
-        {renderVendors}
-        </ul>
+        <div className="vendorlist_div">
+        <ul>{renderVendors}</ul>
         <ul className="page_numbers">
               {renderPageNumbers}
             </ul>
