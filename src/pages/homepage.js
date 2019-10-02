@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCog } from '@fortawesome/free-solid-svg-icons';
-import VendorList from '../service';
+import VendorList from './vendorpages/vendorshowcase';
 
 const Homepage = () => <div className='homepage_div'>
 
@@ -29,7 +29,7 @@ const Homepage = () => <div className='homepage_div'>
             <FontAwesomeIcon icon={faCog} />
             <h2>Valuable Projects</h2>
             </div>
-                <p>Find professionals and agencies who are specialized in the field that you want</p>
+            <p>Find professionals and agencies who are specialized in the field that you want</p>
             <div className="landing_page_body_div3_blt">
             <FontAwesomeIcon icon={faCog} />
             <h2>Customer Support</h2>
@@ -47,11 +47,6 @@ const Homepage = () => <div className='homepage_div'>
             <h1>Join For Free</h1>
             <p>Join over 1000 people in getting high paying jobs on servicemart today</p>
             <Link to='/vendor' className='link'>Join Now</Link>
-        </div>
-        <div className="landing_page_body_div6">
-            <h1>Verified Reviews</h1>
-            <p>More than 100 Verified Reviews provided by Servicemart Customers.</p>
-            <section>Some verified content Some verified content Some verified content Some verified content Some verified content Some verified content</section>
         </div>
         <div className="landing_page_body_div7">
             <h1>Start Exploring<br/>or<br/>Let us do it for you</h1>

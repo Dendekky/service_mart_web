@@ -1,5 +1,6 @@
 /* eslint-disable linebreak-style */
 import React from 'react';
+import './vendor.scss';
 
 export default class Vendor extends React.Component {
   constructor(props) {
@@ -51,10 +52,6 @@ export default class Vendor extends React.Component {
   render() {
     return (
             <div className="vendor_signup_div">
-
-            <div>
-                <img src={'/public/05.png'}/>
-            </div>
             <div>
                 <form onSubmit={this.onSubmit}>
                 <p>Agency Name </p>
@@ -100,7 +97,7 @@ export default class Vendor extends React.Component {
                 placeholder="e.g Baker, Shoemaker, Event Planner "/><br/>
 
                 <p>What category does this belong ?</p>
-                <select
+                <select className="button"
                 name="service_category"
                 value={this.state.service_category}
                 onChange={this.handleInputChange}
@@ -128,7 +125,7 @@ export default class Vendor extends React.Component {
                 placeholder="Sell yourself in 120 characters or less"
                 required/><br/>
 
-                <input type="submit" value="Finish"/><br/>
+                <input className="button" type="submit" value="Finish"/><br/>
                 <p className="gapp-intro">{this.state.apiResponse}</p>
 
             </form>

@@ -10,14 +10,6 @@ const Footer = () => <div className="footer-group" >
     <Link to='/vendorlist' className='link'>Available jobs</Link>
 </div>
 <div>
-    <h3>Popular Service</h3>
-    <Link to='/vendorlist' className='link'>Makeup</Link>
-    <Link to='/vendorlist' className='link'>Photography</Link>
-    <Link to='/vendorlist' className='link'>Catering</Link>
-    <Link to='/vendorlist' className='link'>Plumbing</Link>
-    <Link to='/vendorlist' className='link'>Photocopying</Link>
-</div>
-<div>
     <h3>Contact Us</h3>
     <Link to='/' className='link'>Facebook</Link>
     <Link to='/' className='link'>Instagram</Link>

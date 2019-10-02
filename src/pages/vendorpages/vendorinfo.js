@@ -31,10 +31,6 @@ class VendorInfo extends React.Component {
         </div>
     );
   }
-}
-
-// VendorInfo.propType = {
-//   match: React.PropType.string,
-// };
+};
 
 export default VendorInfo;
