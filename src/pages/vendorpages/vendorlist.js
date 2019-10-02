@@ -2,12 +2,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './vendor.scss';
+import Axios from 'axios';
+import Loader from 'react-loader-spinner';
 
 export default class VendorDisp extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       vendorlists: [],
+      isLoading: false,
+      error: null,
       currentPage: 1,
       vendorsPerPage: 3,
     };
@@ -20,13 +24,37 @@ export default class VendorDisp extends React.Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:3000/api/vendors')
-      .then(response => response.json())
-      .then(data => this.setState({ vendorlists: data.vendorlists }));
+    this.setState({ isLoading: true });
+
+    Axios.get('http://localhost:3000/api/vendors')
+      .then(result => this.setState({
+        vendorlists: result.data.vendorlists,
+        isLoading: false,
+      }))
+      .catch(error => this.setState({
+        error,
+        isLoading: false,
+      }));
   }
 
   render() {
-    const { vendorlists, currentPage, vendorsPerPage } = this.state;
+    const {
+      vendorlists, isLoading, error, currentPage, vendorsPerPage,
+    } = this.state;
+
+    if (error) {
+      return <p>{error.message}</p>;
+    }
+    if (isLoading) {
+      return <Loader
+      type="Puff"
+      color="#00BFFF"
+      height={40}
+      width={40}
+      timeout={3000}
+   />;
+    }
+
 
     // Logic for displaying current Vendors
     const indexOfLastVendor = currentPage * vendorsPerPage;

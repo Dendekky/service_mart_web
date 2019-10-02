@@ -10,18 +10,16 @@ export default class Register extends Component {
       email: '',
       password: '',
     };
-    this.handleInputChange = this.handleInputChange.bind(this);
-    this.onSubmit = this.onSubmit.bind(this);
   }
 
-  handleInputChange(event) {
+  handleInputChange = (event) => {
     const { value, name } = event.target;
     this.setState({
       [name]: value,
     });
   }
 
-  async onSubmit(event) {
+  onSubmit = async (event) => {
     event.preventDefault();
     try {
       const response = await fetch('http://localhost:3000/api/register', {

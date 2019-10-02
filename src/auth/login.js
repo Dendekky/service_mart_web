@@ -10,11 +10,9 @@ export default class Login extends Component {
       email: '',
       password: '',
     };
-    this.handleInputChange = this.handleInputChange.bind(this);
-    this.onSubmit = this.onSubmit.bind(this);
   }
 
-  handleInputChange(event) {
+  handleInputChange = (event) => {
     const { value, name } = event.target;
     this.setState({
       [name]: value,
@@ -23,7 +21,7 @@ export default class Login extends Component {
 
   // consider axios for api calls
 
-  onSubmit(event) {
+  onSubmit = (event) => {
     event.preventDefault();
     this.LoginApi();
   }

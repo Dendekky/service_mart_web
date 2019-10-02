@@ -5,7 +5,7 @@ module.exports = {
   entry: './src/index.js',
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'dist'),
   },
   module: {
     rules: [
@@ -30,7 +30,7 @@ module.exports = {
           'style-loader',
           'css-loader',
           'sass-loader',
-        ]
+        ],
       },
       {
         test: /\.(png|jpg|gif)$/i,
@@ -44,6 +44,9 @@ module.exports = {
         ],
       },
     ],
+  },
+  devServer: {
+    historyApiFallback: true,
   },
   plugins: [
     new HtmlWebPackPlugin({
