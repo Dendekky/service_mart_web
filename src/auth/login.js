@@ -1,7 +1,9 @@
 /* eslint-disable linebreak-style */
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-// import Service from '../service/index';
+import { Link } from 'react-router-dom';
+import Axios from 'axios';
+import setAuthToken from './setAuthToken';
+// import { LoginApi } from '../service/apihandler';
 
 export default class Login extends Component {
   constructor(props) {
@@ -26,22 +28,18 @@ export default class Login extends Component {
     this.LoginApi();
   }
 
-  // So this is the api method exported to the service directory
-  async LoginApi() {
-    try {
-      const response = await fetch('http://localhost:3000/api/login', {
-        method: 'POST',
-        body: JSON.stringify(this.state),
-        headers: { 'Content-Type': 'application/json' },
-      });
-      if (!response.ok) {
-        throw Error(response.statusText);
-      }
-      const res = await response.text();
-      this.setState({ apiResponse: res });
-    } catch (err) {
-      console.log(err);
-    }
+  LoginApi = async () => {
+    Axios.post('http://localhost:3000/api/login', this.state)
+      .then((res) => {
+        // Save to localStorage
+        // Set token to localStorage
+        const { token } = res.data;
+        localStorage.setItem('token', token);
+        // Set token to Auth header
+        setAuthToken(token);
+        this.props.history.push('/');
+      })
+      .catch(err => console.log(err));
   }
 
   render() {
@@ -72,7 +70,7 @@ export default class Login extends Component {
         <div>
        <input className="button" type="submit" value="Login" />
        </div>
-       <p className="gapp-intro">{this.state.apiResponse}</p>
+       <p>{this.state.apiResponse}</p>
       </form>
       <div className='login_register_div'>
         <span>Don't have an account?</span>

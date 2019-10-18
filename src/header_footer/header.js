@@ -9,7 +9,7 @@ const NavBar = () => <div className="nav-group" >
       <Link to='/'>
         <img src={'/public/05.png'}/>
         </Link>
-    <Link to='#'>
+    <Link to='/search'>
     <FontAwesomeIcon icon={faSearch} />
     </Link>
       <ResponsiveMenu

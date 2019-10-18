@@ -12,6 +12,8 @@ import VendorDisp from '../pages/vendorpages/vendorlist';
 import VendorInfo from '../pages/vendorpages/vendorinfo';
 import CategoryList from '../pages/vendorpages/vendorcategory';
 import CategoryInfo from '../pages/vendorpages/vendorcategoryinfo';
+import Auth from './auth';
+import Search from '../header_footer/search';
 
 // TODO: Switch API call handlers to the service directory
 const RouterFile = () => <Router>
@@ -19,6 +21,7 @@ const RouterFile = () => <Router>
     <NavBar />
     <Route path='/vendor' component={Vendor}></Route>
     <Route exact path='/vendorlist' component={VendorDisp}></Route>
+    <Route path='/search' component={Search}></Route>
     <Route path='/vendorlist/:VendorId' component={VendorInfo}></Route>
     <Route exact path='/vendorcategory' component={CategoryList}></Route>
     <Route path='/vendorcategory/:Category' component={CategoryInfo}></Route>

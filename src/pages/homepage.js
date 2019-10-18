@@ -39,7 +39,7 @@ const Homepage = () => <div className='homepage_div'>
         <div className="landing_page_body_div4">
             <h1>Recommended for you</h1>
             <div className='vendor-list'>
-            <VendorList/>
+            {/* <VendorList/> */}
             </div>
             <Link to='/vendorlist' className='link'>See more...</Link>
         </div>
