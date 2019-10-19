@@ -11,6 +11,7 @@ export default class Login extends Component {
     this.state = {
       email: '',
       password: '',
+      wrongCred: '',
     };
   }
 
@@ -37,12 +38,22 @@ export default class Login extends Component {
         localStorage.setItem('token', token);
         // Set token to Auth header
         setAuthToken(token);
-        this.props.history.push('/');
+        if (res.status === 200) {
+          this.props.history.push('/');
+        } else {
+          const error = new Error(res.error);
+          throw error;
+        }
       })
-      .catch(err => console.log(err));
+      .catch((err) => {
+        console.error(err);
+        this.setState({ wrongCred: 'invalid userame or password' });
+      });
   }
 
   render() {
+    const { wrongCred } = this.state;
+
     return (
       <div className='login_main_div'>
         <form onSubmit={this.onSubmit}>
@@ -70,7 +81,7 @@ export default class Login extends Component {
         <div>
        <input className="button" type="submit" value="Login" />
        </div>
-       <p>{this.state.apiResponse}</p>
+       <p>{wrongCred}</p>
       </form>
       <div className='login_register_div'>
         <span>Don't have an account?</span>
