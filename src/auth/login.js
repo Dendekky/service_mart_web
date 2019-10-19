@@ -22,7 +22,7 @@ export default class Login extends Component {
     });
   }
 
-  // consider axios for api calls
+  // consider fetching eror message from the backend
 
   onSubmit = (event) => {
     event.preventDefault();
