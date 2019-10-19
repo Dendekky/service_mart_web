@@ -1,6 +1,7 @@
 /* eslint-disable linebreak-style */
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
+import Axios from 'axios';
 
 export default function Auth(ComponentToProtect) {
   return class Authe extends Component {
@@ -13,7 +14,7 @@ export default function Auth(ComponentToProtect) {
     }
 
     componentDidMount() {
-      fetch('/checkToken')
+      Axios.get('http://localhost:3000/api/checkToken')
         .then((res) => {
           if (res.status === 200) {
             this.setState({ loading: false });

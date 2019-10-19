@@ -20,7 +20,7 @@ const RouterFile = () => <Router>
     <div>
     <NavBar />
     <Route path='/vendor' component={Vendor}></Route>
-    <Route exact path='/vendorlist' component={VendorDisp}></Route>
+    <Route exact path='/vendorlist' component={Auth(VendorDisp)}></Route>
     <Route path='/search' component={Search}></Route>
     <Route path='/vendorlist/:VendorId' component={VendorInfo}></Route>
     <Route exact path='/vendorcategory' component={CategoryList}></Route>
