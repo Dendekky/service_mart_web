@@ -8,7 +8,7 @@ export default class Search extends React.Component {
     super();
     this.state = {
       agency_name: '',
-      loaded: false,
+      // loaded: false,
       vendorlists: [],
     };
   }
@@ -17,28 +17,21 @@ export default class Search extends React.Component {
     const { value, name } = event.target;
     this.setState({
       [name]: value,
+    }, () => {
+      if (this.state.agency_name && this.state.agency_name.length > 1) {
+        // if (this.state.agency_name.length % 2 === 0) {
+        this.SearchApi();
+        // }
+      }
     });
   }
 
-  onSubmit = (event) => {
-    event.preventDefault();
-    this.SearchApi();
-  }
+  // onSubmit = (event) => {
+  //   event.preventDefault();
+  //   this.SearchApi();
+  // }
 
   SearchApi = async () => {
-    // try {
-    //   const response = await fetch('http://localhost:3000/api/search', {
-    //     method: 'POST',
-    //     body: JSON.stringify(this.state),
-    //     headers: { 'Content-Type': 'application/json' },
-    //     credentials: 'same-origin',
-    //   });
-    //   console.log(response);
-    //   const res = await response.text();
-    //   this.setState({ apiResponse: res });
-    // } catch (err) {
-    //   console.log(err);
-    // }
     Axios.post('http://localhost:3000/api/search', this.state)
       .then((result) => {
         this.setState({
@@ -49,16 +42,16 @@ export default class Search extends React.Component {
   }
 
   render() {
-    const { loaded, vendorlists } = this.state;
+    const { vendorlists } = this.state;
 
-    if (loaded) {
-      return <div>
-      {vendorlists.map(vendorlist => <div key={vendorlist.id}>
-      <Link to={`/vendorlist/${vendorlist.id}`} className='link'>{vendorlist.agency_name}</Link>
-        <p>{vendorlist.service_category}</p>
-      </div>)}
-      </div>;
-    }
+    // if (loaded) {
+    //   return <div>
+    //   {vendorlists.map(vendorlist => <div key={vendorlist.id}>
+    //   <Link to={`/vendorlist/${vendorlist.id}`} className='link'>{vendorlist.agency_name}</Link>
+    //     <p>{vendorlist.service_category}</p>
+    //   </div>)}
+    //   </div>;
+    // }
     return (
       <div className='login_main_div'>
         <form onSubmit={this.onSubmit}>
@@ -72,10 +65,16 @@ export default class Search extends React.Component {
           required
         />
         </div>
-        <div>
+        {/* <div>
        <input className="button" type="submit" value="Search" />
-       </div>
+       </div> */}
       </form>
+      <div>
+      {vendorlists.map(vendorlist => <div key={vendorlist.id}>
+      <Link to={`/vendorlist/${vendorlist.id}`} className='link'>{vendorlist.agency_name}</Link>
+        <p>{vendorlist.service_category}</p>
+      </div>)}
+      </div>
       </div>
     );
   }

@@ -6,7 +6,7 @@ const Footer = () => <div className="footer-group" >
     <h3>Company</h3>
     <Link to='/howitworks' className='link'>About</Link>
     <Link to='/howitworks' className='link'>How it works</Link>
-    <Link to='/login' className='link'>Login</Link>
+    <Link to='/register' className='link'>Sign up</Link>
     <Link to='/vendorlist' className='link'>Available jobs</Link>
 </div>
 <div>
