@@ -8,7 +8,7 @@ export default class Search extends React.Component {
     super();
     this.state = {
       agency_name: '',
-      // loaded: false,
+      loaded: true,
       vendorlists: [],
     };
   }
@@ -22,14 +22,14 @@ export default class Search extends React.Component {
         // if (this.state.agency_name.length % 2 === 0) {
         this.SearchApi();
         // }
+      } else if (this.state.agency_name.length < 1) {
+        this.setState({
+          loaded: false,
+          vendorlists: [],
+        });
       }
     });
   }
-
-  // onSubmit = (event) => {
-  //   event.preventDefault();
-  //   this.SearchApi();
-  // }
 
   SearchApi = async () => {
     Axios.post('http://localhost:3000/api/search', this.state)
@@ -44,7 +44,9 @@ export default class Search extends React.Component {
   render() {
     const { vendorlists } = this.state;
 
-    // if (loaded) {
+    // if (!loaded) {
+    //   return null;
+    // }
     //   return <div>
     //   {vendorlists.map(vendorlist => <div key={vendorlist.id}>
     //   <Link to={`/vendorlist/${vendorlist.id}`} className='link'>{vendorlist.agency_name}</Link>
@@ -56,14 +58,14 @@ export default class Search extends React.Component {
       <div className='login_main_div'>
         <form onSubmit={this.onSubmit}>
         <div>
-        <input
+        <Link to='/search'><input
           type="agency_name"
           name="agency_name"
           placeholder="Search for a vendor"
           value={this.state.agency_name}
           onChange={this.handleInputChange}
           required
-        />
+        /></Link>
         </div>
         {/* <div>
        <input className="button" type="submit" value="Search" />

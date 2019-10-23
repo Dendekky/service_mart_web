@@ -15,7 +15,6 @@ import CategoryInfo from '../pages/vendorpages/vendorcategoryinfo';
 import Auth from './auth';
 import Search from '../header_footer/search';
 
-// TODO: Switch API call handlers to the service directory
 const RouterFile = () => <Router>
     <div>
     <NavBar />

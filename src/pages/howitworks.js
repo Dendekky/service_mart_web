@@ -2,6 +2,9 @@
 import React from 'react';
 
 const HowItWorks = () => <div className='howitworks_div'>
+    {
+  window.scrollTo(0, 0)
+}
 
 <div>
 <h1>Sit back, We'll take it from here</h1>

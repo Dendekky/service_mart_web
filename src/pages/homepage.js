@@ -4,11 +4,9 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCog } from '@fortawesome/free-solid-svg-icons';
 import VendorList from './vendorpages/vendorshowcase';
-import Search from '../header_footer/search';
 
 const Homepage = () => <div className='homepage_div'>
 
-        <Search />
         <div className="landing_page_body_div1">
             <h1>Discover The Best Deals for Your Next Event</h1>
         </div>
@@ -54,7 +52,7 @@ const Homepage = () => <div className='homepage_div'>
             <h1>Start Exploring<br/>or<br/>Let us do it for you</h1>
             <Link to='/login' className='link'>Get Started</Link>
         </div>
-        
+
     </div>;
 
 export default Homepage;

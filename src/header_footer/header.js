@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faBars, faCapsules } from '@fortawesome/free-solid-svg-icons';
 import ResponsiveMenu from 'react-responsive-navbar';
-import Search from './search'
+import Search from './search';
 
 const NavBar = () => <div>
   <div className="nav-group" >
@@ -30,7 +30,7 @@ const NavBar = () => <div>
         }
       />
     </div>
-    {/* <Search /> */}
+    <Search />
     </div>;
 
 export default NavBar;
