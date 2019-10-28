@@ -14,11 +14,9 @@ export default class Vendor extends React.Component {
       service_category: '',
       bio: '',
     };
-    this.handleInputChange = this.handleInputChange.bind(this);
-    this.onSubmit = this.onSubmit.bind(this);
   }
 
-  handleInputChange(event) {
+  handleInputChange = (event) => {
     const { value, name } = event.target;
     this.setState({
       [name]: value,
@@ -26,7 +24,7 @@ export default class Vendor extends React.Component {
   }
   //  TODO: Consider axios for api calls
 
-  onSubmit(event) {
+  onSubmit = (event) => {
     event.preventDefault();
     this.VendorApi();
   }
@@ -34,7 +32,7 @@ export default class Vendor extends React.Component {
   // So this is the api method exported to the service directory
   async VendorApi() {
     try {
-      const response = await fetch('http://localhost:3000/api/create_vendor', {
+      const response = await fetch('http://service-mart-api.herokuapp.com/api/create_vendor', {
         method: 'POST',
         body: JSON.stringify(this.state),
         headers: { 'Content-Type': 'application/json' },

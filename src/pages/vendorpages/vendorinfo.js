@@ -11,7 +11,7 @@ class VendorInfo extends React.Component {
 
   componentDidMount() {
     const { match: { params } } = this.props;
-    fetch(`http://localhost:3000/api/vendors/${params.VendorId}`)
+    fetch(`http://service-mart-api.herokuapp.com/api/vendors/${params.VendorId}`)
       .then(response => response.json())
       .then(data => this.setState({ vendor: data.vendor }));
   }

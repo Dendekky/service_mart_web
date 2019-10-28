@@ -1,6 +1,7 @@
 /* eslint-disable linebreak-style */
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import Axios from 'axios';
 
 export default class Register extends Component {
   constructor(props) {
@@ -9,41 +10,42 @@ export default class Register extends Component {
       fullname: '',
       email: '',
       password: '',
+      errmessage: '',
     };
-    this.handleInputChange = this.handleInputChange.bind(this);
-    this.onSubmit = this.onSubmit.bind(this);
   }
 
-  handleInputChange(event) {
+  handleInputChange = (event) => {
     const { value, name } = event.target;
     this.setState({
       [name]: value,
     });
   }
 
-  async onSubmit(event) {
+  onSubmit = async (event) => {
     event.preventDefault();
-    try {
-      const response = await fetch('http://localhost:3000/api/register', {
-        method: 'POST',
-        body: JSON.stringify(this.state),
-        headers: { 'Content-Type': 'application/json' },
+    Axios.post('http://service-mart-api.herokuapp.com/api/register', this.state)
+      .then((res) => {
+        // console.log(res.data.message),
+        if (res.status === 201) {
+          this.props.history.push('/login');
+        } else {
+          this.setState({ errmessage: res.data.message || res.data.errors[0].msg });
+          // const error = new Error(res.error);
+          // throw error;
+        }
+      })
+      .catch((error) => {
+        console.error(error);
       });
-      if (!response.ok) {
-        throw Error(response.statusText);
-      }
-      const res = await response.text();
-      this.setState({ apiResponse: res });
-    } catch (err) {
-      console.log(err);
-    }
-  }
+  };
+
 
   render() {
+    const { errmessage } = this.state;
     return (
       <div className='login_main_div'>
         <form onSubmit={this.onSubmit}>
-        <p>Signup For Your Vendor Account!</p>
+        <p>Signup for free to enjoy Servicemart</p>
         <div>
         <input
           type="text"
@@ -79,6 +81,7 @@ export default class Register extends Component {
        </div>
        <p className="gapp-intro">{this.state.apiResponse}</p>
       </form>
+      <p>{errmessage}</p>
       <div className="register_login_div">
           <span>Already have an account?</span>
           <Link className="link" to='/login'>Login</Link>

@@ -10,6 +10,7 @@
     "lint:fix": "eslint . --fix",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "proxy": "http://service-mart-api.herokuapp.com",
   "author": "",
   "license": "ISC",
   "devDependencies": {
@@ -40,12 +41,15 @@
     "webpack-dev-server": "^3.7.2"
   },
   "dependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
     "@fortawesome/fontawesome-svg-core": "^1.2.22",
     "@fortawesome/free-solid-svg-icons": "^5.10.2",
     "@fortawesome/react-fontawesome": "^0.1.4",
+    "axios": "^0.19.0",
     "font-awesome": "^4.7.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-loader-spinner": "^3.1.4",
     "react-responsive-navbar": "^1.0.11",
     "react-router-dom": "^5.0.1"
   }
