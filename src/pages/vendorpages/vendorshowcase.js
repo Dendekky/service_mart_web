@@ -12,7 +12,7 @@ export default class VendorList extends React.Component {
   }
 
   componentDidMount() {
-    fetch('http://service-mart-api.herokuapp.com/api/vendors')
+    fetch('https://service-mart-api.herokuapp.com/api/vendors')
       .then(response => response.json())
       .then(data => this.setState({ vendorlists: data.vendorlists }));
   }

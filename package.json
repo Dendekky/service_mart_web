@@ -10,7 +10,7 @@
     "lint:fix": "eslint . --fix",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "proxy": "http://service-mart-api.herokuapp.com",
+  "proxy": "https://service-mart-api.herokuapp.com",
   "author": "",
   "license": "ISC",
   "devDependencies": {

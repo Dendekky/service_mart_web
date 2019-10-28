@@ -14,7 +14,7 @@ export default function Auth(ComponentToProtect) {
     }
 
     componentDidMount() {
-      Axios.get('http://service-mart-api.herokuapp.com/api/checkToken')
+      Axios.get('https://service-mart-api.herokuapp.com/api/checkToken')
         .then((res) => {
           if (res.status === 200) {
             this.setState({ loading: false });
