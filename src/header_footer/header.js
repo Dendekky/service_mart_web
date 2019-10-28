@@ -10,7 +10,7 @@ const NavBar = () => <div>
   <div className="nav-group" >
       <Link to='/'>
       <FontAwesomeIcon icon={faCapsules} />
-        {/* <img src={'/src/public/05.png'}/> */}
+        {/* <img className='image' src={'/src/public/05.png'}/> */}
         </Link>
     <Link to='/search'>
     {/* <FontAwesomeIcon icon={faSearch} /> */}
