@@ -23,7 +23,7 @@ export default class Register extends Component {
 
   onSubmit = async (event) => {
     event.preventDefault();
-    Axios.post('http://service-mart-api.herokuapp.com/api/register', this.state)
+    Axios.post('https://service-mart-api.herokuapp.com/api/register', this.state)
       .then((res) => {
         // console.log(res.data.message),
         if (res.status === 201) {

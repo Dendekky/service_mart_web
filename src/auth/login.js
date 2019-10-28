@@ -30,7 +30,7 @@ export default class Login extends Component {
   }
 
   LoginApi = async () => {
-    Axios.post('http://service-mart-api.herokuapp.com/api/login', this.state)
+    Axios.post('https://service-mart-api.herokuapp.com/api/login', this.state)
       .then((res) => {
         // Save to localStorage
         // Set token to localStorage

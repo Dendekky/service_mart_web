@@ -32,7 +32,7 @@ export default class Vendor extends React.Component {
   // So this is the api method exported to the service directory
   async VendorApi() {
     try {
-      const response = await fetch('http://service-mart-api.herokuapp.com/api/create_vendor', {
+      const response = await fetch('https://service-mart-api.herokuapp.com/api/create_vendor', {
         method: 'POST',
         body: JSON.stringify(this.state),
         headers: { 'Content-Type': 'application/json' },
