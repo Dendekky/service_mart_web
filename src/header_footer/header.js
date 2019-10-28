@@ -9,7 +9,8 @@ import Search from './search';
 const NavBar = () => <div>
   <div className="nav-group" >
       <Link to='/'>
-        <img src={'/src/public/05.png'}/>
+      <FontAwesomeIcon icon={faCapsules} />
+        {/* <img src={'/src/public/05.png'}/> */}
         </Link>
     <Link to='/search'>
     {/* <FontAwesomeIcon icon={faSearch} /> */}
