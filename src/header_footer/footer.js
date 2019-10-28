@@ -1,7 +1,9 @@
+/* eslint-disable linebreak-style */
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Footer = () => <div className="footer-group" >
+const Footer = () => <div className="footer">
+<div className="footer-group" >
 <div>
     <h3>Company</h3>
     <Link to='/howitworks' className='link'>About</Link>
@@ -14,17 +16,10 @@ const Footer = () => <div className="footer-group" >
     <Link to='/' className='link'>Facebook</Link>
     <Link to='/' className='link'>Instagram</Link>
     <Link to='/' className='link'>Twitter</Link>
-    <Link to='/' className='link'>Email</Link>
     <Link to='/' className='link'>Whatsapp</Link>
 </div>
-<div className="footer-form">
-    <p>Don’t tell anyone, Enter your email address to receive secret deals on both Job listings and vendor offerings.</p>
-    <form className="signup" name="signup">
-        <p><input type="email" name="email" className="inputText" required placeholder="Enter your email address"/></p>
-        <input type="submit" value="Subscribe"/>
-        <p>2019 - Servicemart All Rights Reserved</p>
-    </form>
 </div>
+        <p>2019 - Servicemart All Rights Reserved</p>
 </div>;
 
 export default Footer;
