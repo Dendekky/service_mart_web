@@ -18,7 +18,7 @@ import Search from '../header_footer/search';
 const RouterFile = () => <Router>
     <div>
     <NavBar />
-    <Route path='/vendor' component={Vendor}></Route>
+    <Route path='/vendor' component={Auth(Vendor)}></Route>
     <Route exact path='/vendorlist' component={VendorDisp}></Route>
     <Route path='/search' component={Search}></Route>
     <Route path='/vendorlist/:VendorId' component={Auth(VendorInfo)}></Route>

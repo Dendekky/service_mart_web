@@ -9,7 +9,7 @@ import Search from './search';
 const NavBar = () => <div>
   <div className="nav-group" >
       <Link to='/'>
-        <img src={process.env.PUBLIC_URL + '/05.png'} alt="logo"/>
+        <img src={'/src/public/05.png'}/>
         </Link>
     <Link to='/search'>
     {/* <FontAwesomeIcon icon={faSearch} /> */}

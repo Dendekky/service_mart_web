@@ -13,9 +13,9 @@ const Homepage = () => <div className='homepage_div'>
         <div className="landing_page_body_div2" >
             <h1>Explore Categories</h1>
                 <div>
-                <img src={'/public/04.png'} alt="Event Planner"/>
-                <img src={'/public/01.png'} alt="Event Planner"/>
-                <img src={'/public/02.png'} alt="Event Planner"/>
+                <img src={'src/public/04.png'} alt="Event Planner"/>
+                <img src={'src/public/01.png'} alt="Event Planner"/>
+                <img src={'src/public/02.png'} alt="Event Planner"/>
                 </div>
             <h1>Discover the best deals/event vendors in your city</h1>
         </div>

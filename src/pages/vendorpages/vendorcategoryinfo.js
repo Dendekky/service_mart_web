@@ -25,7 +25,7 @@ class CategoryInfo extends React.Component {
     this.setState({ isLoading: true });
 
     const { match: { params } } = this.props;
-    Axios.get(`http://localhost:3000/api/vendor/category/${params.Category}`)
+    Axios.get(`http://service-mart-api.herokuapp.com/api/vendor/category/${params.Category}`)
       .then(result => this.setState({
         category: result.data.category, isLoading: false,
       }));

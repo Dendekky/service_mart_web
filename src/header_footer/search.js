@@ -32,7 +32,7 @@ export default class Search extends React.Component {
   }
 
   SearchApi = async () => {
-    Axios.post('http://localhost:3000/api/search', this.state)
+    Axios.post('http://service-mart-api.herokuapp.com/api/search', this.state)
       .then((result) => {
         this.setState({
           vendorlists: result.data.vendor,
