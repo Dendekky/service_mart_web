@@ -92,14 +92,19 @@
     }
 }
 
-.footer-group {
-    background: grey;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
-    margin-top: 48px;
+.footer{
+    background: rgb(118, 228, 228);
+    .footer-group {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: center;
+        margin-top: 48px;
+    }
+    p {
+        text-align: center;
+    }
 }
 
 .footer-group div {
