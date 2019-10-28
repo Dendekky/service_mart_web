@@ -38,7 +38,7 @@ export default class Login extends Component {
         localStorage.setItem('token', token);
         // Set token to Auth header
         setAuthToken(token);
-        if (res.status === 200) {
+        if (res.data.status === 200) {
           this.props.history.push('/');
         } else {
           this.setState({ errMessage: res.data.message || res.data.errors[0].msg });
@@ -46,8 +46,8 @@ export default class Login extends Component {
           throw error;
         }
       })
-      .catch((err) => {
-        console.error(err);
+      .catch((error) => {
+        console.error(error);
       });
   }
 

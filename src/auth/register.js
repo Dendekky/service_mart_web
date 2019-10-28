@@ -26,12 +26,10 @@ export default class Register extends Component {
     Axios.post('https://service-mart-api.herokuapp.com/api/register', this.state)
       .then((res) => {
         // console.log(res.data.message),
-        if (res.status === 201) {
+        if (res.data.status === 201) {
           this.props.history.push('/login');
         } else {
           this.setState({ errmessage: res.data.message || res.data.errors[0].msg });
-          // const error = new Error(res.error);
-          // throw error;
         }
       })
       .catch((error) => {

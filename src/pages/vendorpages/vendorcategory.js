@@ -5,43 +5,43 @@ import './vendor.scss';
 
 const CategoryList = () => <div className='category_div'>
     <div>
-    <img src={'/public/04.png'} alt="Event Planner"/>
+    <img src={'/src/public/04.png'} alt="Event Planner"/>
     <Link to='/vendorcategory/fashion'><p>Fashion</p></Link>
     </div>
     <div>
-    <img src={'/public/01.png'} alt="Event Planner"/>
+    <img src={'/src/public/01.png'} alt="Event Planner"/>
     <Link to='/vendorcategory/technology'><p>Technology</p></Link>
     </div>
     <div>
-    <img src={'/public/02.png'} alt="Event Planner"/>
+    <img src={'/src/public/02.png'} alt="Event Planner"/>
     <Link to='/vendorcategory/branding'><p>Branding</p></Link>
     </div>
     <div>
-    <img src={'/public/03.png'} alt="Event Planner"/>
+    <img src={'/src/public/03.png'} alt="Event Planner"/>
     <Link to='/vendorcategory/effects'><p>Effects</p></Link>
     </div>
     <div>
-    <img src={'/public/04.png'} alt="Event Planner"/>
+    <img src={'/src/public/04.png'} alt="Event Planner"/>
     <Link to='/vendorcategory/rentals'><p>Rentals</p></Link>
     </div>
     <div>
-    <img src={'/public/01.png'} alt="Event Planner"/>
+    <img src={'/src/public/01.png'} alt="Event Planner"/>
     <Link to='/vendorcategory/food'><p>Food</p></Link>
     </div>
     <div>
-    <img src={'/public/02.png'} alt="Event Planner"/>
+    <img src={'/src/public/02.png'} alt="Event Planner"/>
     <Link to='/vendorcategory/electronics'><p>Electronics</p></Link>
     </div>
     <div>
-    <img src={'/public/03.png'} alt="Event Planner"/>
+    <img src={'/src/public/03.png'} alt="Event Planner"/>
     <Link to='/vendorcategory/medicine'><p>Medicine</p></Link>
     </div>
     <div>
-    <img src={'/public/04.png'} alt="Event Planner"/>
+    <img src={'/src/public/04.png'} alt="Event Planner"/>
     <Link to='/vendorcategory/laundry'><p>Laundry</p></Link>
     </div>
     <div>
-    <img src={'/public/01.png'} alt="Event Planner"/>
+    <img src={'/src/public/01.png'} alt="Event Planner"/>
     <Link to='/vendorcategory/media'><p>Media</p></Link>
     </div>
 </div>;
