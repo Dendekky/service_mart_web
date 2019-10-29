@@ -13,9 +13,9 @@ const Homepage = () => <div className='homepage_div'>
         <div className="landing_page_body_div2" >
             <h1>Explore Categories</h1>
                 <div>
-                <img className='image' src={'https://source.unsplash.com/random'} alt="Event Planner"/>
-                <img className='image' src={'https://source.unsplash.com/random'} alt="Event Planner"/>
-                <img className='image' src={'https://source.unsplash.com/random'} alt="Event Planner"/>
+                <img className='image' src={'https://source.unsplash.com/random?singer'} alt="Event Planner"/>
+                <img className='image' src={'https://source.unsplash.com/random?baking'} alt="Event Planner"/>
+                <img className='image' src={'https://source.unsplash.com/random?photography'} alt="Event Planner"/>
                 </div>
             <h1>Discover the best deals/event vendors in your city</h1>
         </div>
