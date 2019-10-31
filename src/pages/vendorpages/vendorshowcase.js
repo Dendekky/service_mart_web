@@ -20,10 +20,11 @@ export default class VendorList extends React.Component {
   render() {
     const { vendorlists } = this.state;
     return (
-      <div>
-        {vendorlists.filter(vendorlist => vendorlist.id <= 3).map(vendorlist => <div className='rec_vend' key={vendorlist.id}>
-        <Link to={`/vendorlist/${vendorlist.id}`} className='link'><p>{vendorlist.agency_name}</p></Link>
-            <span>{vendorlist.service_category}</span>
+      <div className= 'disp-homepage-vendor'>
+        {vendorlists.filter(vendorlist => vendorlist.id <= 3).map(vendorlist => <div className='homepage-vendor' key={vendorlist.id}>
+          <Link to={`/vendorlist/${vendorlist.id}`} className='link'><p>{vendorlist.agency_name}</p></Link>
+          <img className='vendor-images' src={'https://source.unsplash.com/random?effects'}/>
+          <p>{vendorlist.service_category}</p>
           </div>)}
       </div>
     );

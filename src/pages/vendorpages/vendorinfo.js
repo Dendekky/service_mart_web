@@ -20,6 +20,7 @@ class VendorInfo extends React.Component {
     const { vendor } = this.state;
     return (
         <div className='VendorInfo'>
+            <img className='vendor-images' src={'https://source.unsplash.com/random?effects'}/>
             <h1>{vendor.agency_name}</h1>
             <p>{vendor.service_category}</p>
             <p>{vendor.location}</p>
