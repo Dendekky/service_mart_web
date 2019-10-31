@@ -1,4 +1,4 @@
-
+ 
 .vendor_signup_div{
     display: flex;
     padding: 8px;
@@ -53,6 +53,11 @@
         height: 160px;
         position: relative;
         border-radius: 2%;
+        }
+        .cat-link {
+            text-decoration: none;
+            color: rgb(175, 160, 18);
+            text-align: center;
         }
     }
 }
