@@ -4,6 +4,56 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCog } from '@fortawesome/free-solid-svg-icons';
 import VendorList from './vendorpages/vendorshowcase';
+import Carousel from './carousel';
+
+
+const carouselSlidesData = [
+  {
+    content:
+    <img className='carousel-images' src={'https://source.unsplash.com/random?media'} alt="Event Planner"/>,    
+    source: 'Media',
+  }, {
+    content:
+    <img className='carousel-images' src={'https://source.unsplash.com/random?laundry'} alt="Event Planner"/>,
+    source: 'Laundry',
+  }, {
+    content:
+    <img className='carousel-images' src={'https://source.unsplash.com/random?medicine'} alt="Event Planner"/>,
+    source: 'Medicine',
+  }, {
+    content:
+    <img className='carousel-images' src={'https://source.unsplash.com/random?electronics'} alt="Event Planner"/>,
+    source: 'Electronics',
+  }, {
+    content:
+    <img className='carousel-images' src={'https://source.unsplash.com/random?food'} alt="Event Planner"/>,
+    source: 'Food',
+  }, {
+    content:
+    <img className='carousel-images' src={'https://source.unsplash.com/random?rentals'} alt="Event Planner"/>,
+    source: 'Rentals',
+  }, {
+    content:
+    <img className='carousel-images' src={'https://source.unsplash.com/random?effects'} alt="Event Planner"/>,
+    source: 'Effects',
+  },
+];
+
+const SecInfo = [
+  {
+    content:
+          'Let us know what service you are looking for. Full payment is only released to vendor once you are satisfied with the service.',
+    author: 'Payment Protection',
+  }, {
+    content:
+          'Find professionals and agencies who are specialized in the field that you want. Book your service directly with us online, or request quotes from our service partners. All our partners are licensed, vetted and reviewed by our users',
+    author: 'Valuable Projects',
+  }, {
+    content:
+          'Let our professionals do the work while you focus on your business, family or doing what you love. Our contact center is open 7 days a week to help you along the way.',
+    author: 'Customer Support',
+  },
+];
 
 const Homepage = () => <div className='homepage_div'>
 
@@ -12,29 +62,11 @@ const Homepage = () => <div className='homepage_div'>
         </div>
         <div className="landing_page_body_div2" >
             <h1>Explore Categories</h1>
-                <div>
-                <img className='image' src={'https://source.unsplash.com/random?singer'} alt="Event Planner"/>
-                <img className='image' src={'https://source.unsplash.com/random?baking'} alt="Event Planner"/>
-                <img className='image' src={'https://source.unsplash.com/random?photography'} alt="Event Planner"/>
-                </div>
+            <Carousel slides={carouselSlidesData} />
             <h1>Discover the best deals/event vendors in your city</h1>
         </div>
         <div className="landing_page_body_div3">
-            <div className="landing_page_body_div3_blt">
-            <FontAwesomeIcon icon={faCog} />
-            <h2>Payment Protection</h2>
-            </div>
-                <p>Full payment is released to vendor once you are satisfied with the service</p>
-            <div className="landing_page_body_div3_blt">
-            <FontAwesomeIcon icon={faCog} />
-            <h2>Valuable Projects</h2>
-            </div>
-            <p>Find professionals and agencies who are specialized in the field that you want</p>
-            <div className="landing_page_body_div3_blt">
-            <FontAwesomeIcon icon={faCog} />
-            <h2>Customer Support</h2>
-            </div>
-                <p>Servicemart is here to answer your question, and resolve any challenge 24/7</p>
+            <Carousel className="landing_page_body_div3_blt" slides={SecInfo} />
         </div>
         <div className="landing_page_body_div4">
             <h1>Recommended for you</h1>

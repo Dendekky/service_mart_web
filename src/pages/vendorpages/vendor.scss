@@ -20,7 +20,22 @@
     text-align: center;
 }
 
-.rec_vend {
+.vendor-images {
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+}
+
+.disp-homepage-vendor {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.homepage-vendor {
+    padding: 10px;
     p {
         font-weight: bold;
         font-size: 24px;
@@ -30,14 +45,14 @@
 .category_div {
     display: flex;
     flex-wrap: wrap;
-    margin-left: 30px;
+    justify-content: center;
+    align-items: center;
     div {
         padding: 20px;
-        height: 180px;
+        img {
+        height: 160px;
         position: relative;
-        p {
-            position: absolute;
-            bottom: 0;
+        border-radius: 2%;
         }
     }
 }
