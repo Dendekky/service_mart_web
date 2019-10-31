@@ -20,7 +20,7 @@ const NavBar = () => <div>
         smallMenuClassName="mobile-menu"
         menu={
           <div>
-    <Link className="jobs link">Jobs</Link>
+    <Link className="span link">Jobs</Link>
     <Link to='/vendorcategory'className="span link">Categories</Link>
     <Link to='/login' className="span link">Login</Link>
     <Link to='/vendor' className="span link">Become a Vendor</Link>
