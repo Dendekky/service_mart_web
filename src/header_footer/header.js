@@ -12,10 +12,11 @@ const NavBar = () => <div>
       <FontAwesomeIcon icon={faCapsules} />
         {/* <img className='image' src={'/src/public/05.png'}/> */}
         </Link>
-    <Link to='/search'>
+//     <Link to='/search'>
     {/* <FontAwesomeIcon icon={faSearch} /> */}
-    </Link>
-      <ResponsiveMenu
+//     </Link>
+    <Link className="jobs link">Jobs</Link>
+    <ResponsiveMenu
         menuOpenButton={<div className="open-menu-icon"> <FontAwesomeIcon icon={faBars} /> </div>}
         menuCloseButton={<div className="close-menu-icon"> <FontAwesomeIcon icon={faBars} /> </div>}
         changeMenuOn="500px"
@@ -33,5 +34,4 @@ const NavBar = () => <div>
     </div>
     <Search />
     </div>;
-
 export default NavBar;
