@@ -28,6 +28,6 @@ const NavBar = () => <div>
         }
       />
     </div>
-    <Search />
+    {/* <Search /> */}
     </div>;
 export default NavBar;
