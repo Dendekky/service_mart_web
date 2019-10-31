@@ -12,10 +12,6 @@ const NavBar = () => <div>
       <FontAwesomeIcon icon={faCapsules} />
         {/* <img className='image' src={'/src/public/05.png'}/> */}
         </Link>
-//     <Link to='/search'>
-    {/* <FontAwesomeIcon icon={faSearch} /> */}
-//     </Link>
-    <Link className="jobs link">Jobs</Link>
     <ResponsiveMenu
         menuOpenButton={<div className="open-menu-icon"> <FontAwesomeIcon icon={faBars} /> </div>}
         menuCloseButton={<div className="close-menu-icon"> <FontAwesomeIcon icon={faBars} /> </div>}
@@ -24,7 +20,7 @@ const NavBar = () => <div>
         smallMenuClassName="mobile-menu"
         menu={
           <div>
-    <Link className="span link">Job Listings</Link>
+    <Link className="jobs link">Jobs</Link>
     <Link to='/vendorcategory'className="span link">Categories</Link>
     <Link to='/login' className="span link">Login</Link>
     <Link to='/vendor' className="span link">Become a Vendor</Link>
