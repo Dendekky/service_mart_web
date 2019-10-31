@@ -11,7 +11,7 @@ export default class Login extends Component {
     this.state = {
       email: '',
       password: '',
-      wrongCred: '',
+      errMessage: '',
     };
   }
 
@@ -30,7 +30,7 @@ export default class Login extends Component {
   }
 
   LoginApi = async () => {
-    Axios.post('http://localhost:3000/api/login', this.state)
+    Axios.post('https://service-mart-api.herokuapp.com/api/login', this.state)
       .then((res) => {
         // Save to localStorage
         // Set token to localStorage
@@ -38,26 +38,26 @@ export default class Login extends Component {
         localStorage.setItem('token', token);
         // Set token to Auth header
         setAuthToken(token);
-        if (res.status === 200) {
+        if (res.data.status === 200) {
           this.props.history.push('/');
         } else {
+          this.setState({ errMessage: res.data.message || res.data.errors[0].msg });
           const error = new Error(res.error);
           throw error;
         }
       })
-      .catch((err) => {
-        console.error(err);
-        this.setState({ wrongCred: 'invalid userame or password' });
+      .catch((error) => {
+        console.error(error);
       });
   }
 
   render() {
-    const { wrongCred } = this.state;
+    const { errMessage } = this.state;
 
     return (
       <div className='login_main_div'>
         <form onSubmit={this.onSubmit}>
-        <p>Login To Your Vendor Account!</p>
+        <p>Log in To Your Account!</p>
         <div>
         <input
           type="email"
@@ -81,7 +81,7 @@ export default class Login extends Component {
         <div>
        <input className="button" type="submit" value="Login" />
        </div>
-       <p>{wrongCred}</p>
+       <p>{errMessage}</p>
       </form>
       <div className='login_register_div'>
         <span>Don't have an account?</span>

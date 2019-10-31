@@ -26,7 +26,7 @@ export default class VendorDisp extends React.Component {
   componentDidMount() {
     this.setState({ isLoading: true });
 
-    Axios.get('http://localhost:3000/api/vendors')
+    Axios.get('https://service-mart-api.herokuapp.com/api/vendors')
       .then(result => this.setState({
         vendorlists: result.data.vendorlists,
         isLoading: false,
@@ -51,7 +51,7 @@ export default class VendorDisp extends React.Component {
       color="#00BFFF"
       height={40}
       width={40}
-      timeout={3000}
+      timeout={10000}
    />;
     }
 
