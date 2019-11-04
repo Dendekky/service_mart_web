@@ -1,5 +1,6 @@
 /* eslint-disable linebreak-style */
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class VendorInfo extends React.Component {
   constructor(props) {
@@ -29,6 +30,7 @@ class VendorInfo extends React.Component {
             <h2>Contact</h2>
             <p>{vendor.agency_email}</p>
             <p>{vendor.tel_no}</p>
+            <Link className='link' to='/payment'>Make Payment</Link>
         </div>
     );
   }
