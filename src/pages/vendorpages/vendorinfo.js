@@ -1,24 +1,41 @@
 /* eslint-disable linebreak-style */
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Loader from 'react-loader-spinner';
+import Payment from './payment';
 
 class VendorInfo extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       vendor: {},
+      isLoading: false,
     };
   }
 
   componentDidMount() {
+    this.setState({ isLoading: true });
+
     const { match: { params } } = this.props;
     fetch(`https://service-mart-api.herokuapp.com/api/vendors/${params.VendorId}`)
       .then(response => response.json())
-      .then(data => this.setState({ vendor: data.vendor }));
+      .then(data => this.setState({ vendor: data.vendor, isLoading: false }));
   }
 
   render() {
-    const { vendor } = this.state;
+    const { vendor, test, isLoading } = this.state;
+
+    if (isLoading) {
+      return <Loader
+      className='loader'
+      type="Puff"
+      color="#00BFFF"
+      height={80}
+      width={80}
+      timeout={10000}
+   />;
+    }
+
     return (
         <div className='VendorInfo'>
             <img className='vendor-images' src={'https://source.unsplash.com/random?effects'}/>
@@ -30,7 +47,8 @@ class VendorInfo extends React.Component {
             <h2>Contact</h2>
             <p>{vendor.agency_email}</p>
             <p>{vendor.tel_no}</p>
-            <Link className='link' to='/payment'>Make Payment</Link>
+            <Payment email= {vendor.agency_email} />
+            {/* <Link className='link' to='/payment'>Make Payment</Link> */}
         </div>
     );
   }

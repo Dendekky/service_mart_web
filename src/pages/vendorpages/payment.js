@@ -3,10 +3,14 @@ import React, { Component } from 'react';
 import PaystackButton from 'react-paystack';
 
 export default class Payment extends Component {
-  state = {
-    key: 'pk_live_71a092a31c69652695373a1a9b91b70ded60414b', // PAYSTACK PUBLIC KEY
-    email: 'foobar@example.com', // customer email
-    amount: '',
+  constructor(props) {
+    super(props);
+    console.log(this.props.email);
+    this.state = {
+      key: 'pk_live_71a092a31c69652695373a1a9b91b70ded60414b', // PAYSTACK PUBLIC KEY
+      email: this.props.email, // customer email
+      amount: '',
+    }
   }
 
   callback = (response) => {
@@ -40,6 +44,7 @@ export default class Payment extends Component {
       <div>
         <p>Pay and Rate</p>
         <input
+          className= "payment-input"
           type="number"
           name="amount"
           placeholder="Enter the amount"
