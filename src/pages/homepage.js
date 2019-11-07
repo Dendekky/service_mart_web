@@ -7,6 +7,7 @@ import GridListTile from '@material-ui/core/GridListTile';
 import GridListTileBar from '@material-ui/core/GridListTileBar';
 import Carousel from './carousel';
 import VendorList from './vendorpages/vendorshowcase';
+import Search from '../header_footer/search';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -83,7 +84,7 @@ function Homepage() {
 
   return (
     <div className='homepage_div'>
-
+      <Search />
         <div className="landing_page_body_div1">
             <h1>Discover The Best Deals for Your Next Event</h1>
         </div>

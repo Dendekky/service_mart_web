@@ -1,16 +1,25 @@
 /* eslint-disable linebreak-style */
 import React from 'react';
 import Axios from 'axios';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
+import { withRouter } from 'react-router';
 
-export default class Search extends React.Component {
-  constructor() {
-    super();
+class Search extends React.Component {
+  constructor(props) {
+    super(props);
     this.state = {
       agency_name: '',
       loaded: true,
       vendorlists: [],
     };
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    const { history } = this.props;
+    if (prevState.results !== this.state.results) {
+      history.push('/results');
+    }
   }
 
   handleInputChange = (event) => {
@@ -21,6 +30,7 @@ export default class Search extends React.Component {
       if (this.state.agency_name && this.state.agency_name.length > 1) {
         // if (this.state.agency_name.length % 2 === 0) {
         this.SearchApi();
+        // this.props.history.push('/results');
         // }
       } else if (this.state.agency_name.length < 1) {
         this.setState({
@@ -42,42 +52,42 @@ export default class Search extends React.Component {
   }
 
   render() {
-    const { vendorlists } = this.state;
+    const { vendorlists, agency_name } = this.state;
 
-    // if (!loaded) {
-    //   return null;
-    // }
-    //   return <div>
-    //   {vendorlists.map(vendorlist => <div key={vendorlist.id}>
-    //   <Link to={`/vendorlist/${vendorlist.id}`} className='link'>{vendorlist.agency_name}</Link>
-    //     <p>{vendorlist.service_category}</p>
-    //   </div>)}
-    //   </div>;
-    // }
+    if (agency_name.length > 3) {
+      return <Redirect to={{
+        pathname: '/results',
+        vendorlists,
+      }}
+      />;
+    }
+
     return (
       <div className='login_main_div'>
         <form onSubmit={this.onSubmit}>
         <div>
-        <Link to='/search'><input
+        <input
           type="agency_name"
           name="agency_name"
           placeholder="Search for a vendor"
           value={this.state.agency_name}
           onChange={this.handleInputChange}
           required
-        /></Link>
+        />
         </div>
         {/* <div>
        <input className="button" type="submit" value="Search" />
        </div> */}
       </form>
-      <div>
+      {/* <div>
       {vendorlists.map(vendorlist => <div key={vendorlist.id}>
       <Link to={`/vendorlist/${vendorlist.id}`} className='link'>{vendorlist.agency_name}</Link>
         <p>{vendorlist.service_category}</p>
       </div>)}
-      </div>
+      </div> */}
       </div>
     );
   }
 }
+
+export default withRouter(Search);

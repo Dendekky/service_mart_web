@@ -36,11 +36,12 @@ class CategoryInfo extends React.Component {
 
     if (isLoading) {
       return <Loader
+      className='loader'
       type="Puff"
       color="#00BFFF"
-      height={40}
-      width={40}
-      timeout={3000}
+      height={80}
+      width={80}
+      timeout={10000}
    />;
     }
 

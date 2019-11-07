@@ -15,10 +15,12 @@ import CategoryInfo from '../pages/vendorpages/vendorcategoryinfo';
 import Auth from './auth';
 import Search from '../header_footer/search';
 import Payment from '../pages/vendorpages/payment';
+import Result from '../header_footer/results';
 
 const RouterFile = () => <Router>
     <div>
     <NavBar />
+    <Route path='/results' component={Result}></Route>
     <Route path='/payment' component={Payment}></Route>
     <Route path='/vendor' component={Auth(Vendor)}></Route>
     <Route exact path='/vendorlist' component={VendorDisp}></Route>
