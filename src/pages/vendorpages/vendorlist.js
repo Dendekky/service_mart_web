@@ -13,7 +13,7 @@ export default class VendorDisp extends React.Component {
       isLoading: false,
       error: null,
       currentPage: 1,
-      vendorsPerPage: 3,
+      vendorsPerPage: 10,
     };
   }
 
@@ -47,10 +47,11 @@ export default class VendorDisp extends React.Component {
     }
     if (isLoading) {
       return <Loader
+      className='loader'
       type="Puff"
       color="#00BFFF"
-      height={40}
-      width={40}
+      height={80}
+      width={80}
       timeout={10000}
    />;
     }
@@ -63,7 +64,8 @@ export default class VendorDisp extends React.Component {
 
     const renderVendors = currentVendors.map(vendorlist => <div key={vendorlist.id}>
       <Link to={`/vendorlist/${vendorlist.id}`} className='link'>{vendorlist.agency_name}</Link>
-        <p>{vendorlist.service_category}</p>
+      {/* <img className='image' src={'https://source.unsplash.com/random'}/> */}
+      <p>{vendorlist.service_category}</p>
       </div>);
 
     // Logic for displaying page numbers

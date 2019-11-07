@@ -14,14 +14,16 @@ import CategoryList from '../pages/vendorpages/vendorcategory';
 import CategoryInfo from '../pages/vendorpages/vendorcategoryinfo';
 import Auth from './auth';
 import Search from '../header_footer/search';
+import Payment from '../pages/vendorpages/payment';
 
 const RouterFile = () => <Router>
     <div>
     <NavBar />
+    <Route path='/payment' component={Payment}></Route>
     <Route path='/vendor' component={Auth(Vendor)}></Route>
     <Route exact path='/vendorlist' component={VendorDisp}></Route>
     <Route path='/search' component={Search}></Route>
-    <Route path='/vendorlist/:VendorId' component={Auth(VendorInfo)}></Route>
+    <Route path='/vendorlist/:VendorId' component={VendorInfo}></Route>
     <Route exact path='/vendorcategory' component={CategoryList}></Route>
     <Route path='/vendorcategory/:Category' component={Auth(CategoryInfo)}></Route>
     <Route path='/howitworks' component={HowItWorks}></Route>

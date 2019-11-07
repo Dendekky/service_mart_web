@@ -3,7 +3,7 @@ import React from 'react';
 
 export const LoginApi = async () => {
   try {
-    const response = await fetch('https://service-mart-api.herokuapp.com/api/login', {
+    const response = await fetch('api/api/login', {
       method: 'POST',
       body: JSON.stringify(this.state),
       headers: { 'Content-Type': 'application/json' },
