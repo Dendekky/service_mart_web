@@ -1,40 +1,63 @@
 /* eslint-disable linebreak-style */
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCog } from '@fortawesome/free-solid-svg-icons';
-import VendorList from './vendorpages/vendorshowcase';
+import { makeStyles } from '@material-ui/core/styles';
+import GridList from '@material-ui/core/GridList';
+import GridListTile from '@material-ui/core/GridListTile';
+import GridListTileBar from '@material-ui/core/GridListTileBar';
 import Carousel from './carousel';
+import VendorList from './vendorpages/vendorshowcase';
 
+const useStyles = makeStyles(theme => ({
+  root: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'space-around',
+    overflow: 'hidden',
+    backgroundColor: theme.palette.background.paper,
+  },
+  gridList: {
+    flexWrap: 'nowrap',
+    // Promote the list into his own layer on Chrome. This cost memory but helps keeping high FPS.
+    transform: 'translateZ(0)',
+  },
+  title: {
+    color: theme.palette.primary.light,
+  },
+  titleBar: {
+    background:
+      'linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)',
+  },
+}));
 
-const carouselSlidesData = [
+const tileData = [
   {
     content:
-    <img className='carousel-images' src={'https://source.unsplash.com/random?media'} alt="Event Planner"/>,    
+    <img className='image' src={'https://source.unsplash.com/random?media'} alt="Event Planner"/>,    
     source: 'Media',
   }, {
     content:
-    <img className='carousel-images' src={'https://source.unsplash.com/random?laundry'} alt="Event Planner"/>,
+    <img className='image' src={'https://source.unsplash.com/random?laundry'} alt="Event Planner"/>,
     source: 'Laundry',
   }, {
     content:
-    <img className='carousel-images' src={'https://source.unsplash.com/random?medicine'} alt="Event Planner"/>,
+    <img className='image' src={'https://source.unsplash.com/random?medicine'} alt="Event Planner"/>,
     source: 'Medicine',
   }, {
     content:
-    <img className='carousel-images' src={'https://source.unsplash.com/random?electronics'} alt="Event Planner"/>,
+    <img className='image' src={'https://source.unsplash.com/random?electronics'} alt="Event Planner"/>,
     source: 'Electronics',
   }, {
     content:
-    <img className='carousel-images' src={'https://source.unsplash.com/random?food'} alt="Event Planner"/>,
+    <img className='image' src={'https://source.unsplash.com/random?food'} alt="Event Planner"/>,
     source: 'Food',
   }, {
     content:
-    <img className='carousel-images' src={'https://source.unsplash.com/random?rentals'} alt="Event Planner"/>,
+    <img className='image' src={'https://source.unsplash.com/random?rentals'} alt="Event Planner"/>,
     source: 'Rentals',
   }, {
     content:
-    <img className='carousel-images' src={'https://source.unsplash.com/random?effects'} alt="Event Planner"/>,
+    <img className='image' src={'https://source.unsplash.com/random?effects'} alt="Event Planner"/>,
     source: 'Effects',
   },
 ];
@@ -55,14 +78,35 @@ const SecInfo = [
   },
 ];
 
-const Homepage = () => <div className='homepage_div'>
+function Homepage() {
+  const classes = useStyles();
+
+  return (
+    <div className='homepage_div'>
 
         <div className="landing_page_body_div1">
             <h1>Discover The Best Deals for Your Next Event</h1>
         </div>
         <div className="landing_page_body_div2" >
             <h1>Explore Categories</h1>
-            <Carousel slides={carouselSlidesData} />
+            {/* <Carousel slides={carouselSlidesData} /> */}
+            <div className={classes.root}>
+              <GridList className={classes.gridList} cols={2.5}>
+                {tileData.map(tile => (
+                  <GridListTile key={tile.source}>
+                    {tile.content}
+                    <Link to= {`/vendorcategory/${tile.source}`}>
+                    <GridListTileBar
+                      title={tile.source}
+                      classes={{
+                        root: classes.titleBar,
+                        title: classes.title,
+                      }}
+                    /></Link>
+                  </GridListTile>
+                ))}
+              </GridList>
+            </div>
             <h1>Discover the best deals/event vendors in your city</h1>
         </div>
         <div className="landing_page_body_div3">
@@ -85,6 +129,8 @@ const Homepage = () => <div className='homepage_div'>
             <Link to='/login' className='link'>Get Started</Link>
         </div>
 
-    </div>;
+    </div>
+  )
+};
 
 export default Homepage;

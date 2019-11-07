@@ -1,6 +1,5 @@
 /* eslint-disable linebreak-style */
 import React from 'react';
-import { Link } from 'react-router-dom';
 import Loader from 'react-loader-spinner';
 import Payment from './payment';
 
@@ -23,7 +22,7 @@ class VendorInfo extends React.Component {
   }
 
   render() {
-    const { vendor, test, isLoading } = this.state;
+    const { vendor, isLoading } = this.state;
 
     if (isLoading) {
       return <Loader
@@ -48,7 +47,6 @@ class VendorInfo extends React.Component {
             <p>{vendor.agency_email}</p>
             <p>{vendor.tel_no}</p>
             <Payment email= {vendor.agency_email} />
-            {/* <Link className='link' to='/payment'>Make Payment</Link> */}
         </div>
     );
   }
