@@ -1,44 +1,37 @@
 /* eslint-disable linebreak-style */
 import React from 'react';
 import Axios from 'axios';
-// import { Link } from 'react-router-dom';
 import { Redirect } from 'react-router-dom';
-import { withRouter } from 'react-router';
+import Loader from 'react-loader-spinner';
+// import { withRouter } from 'react-router';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 class Search extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       agency_name: '',
-      loaded: true,
+      loaded: false,
       vendorlists: [],
     };
-  }
-
-  componentDidUpdate(prevProps, prevState) {
-    const { history } = this.props;
-    if (prevState.results !== this.state.results) {
-      history.push('/results');
-    }
   }
 
   handleInputChange = (event) => {
     const { value, name } = event.target;
     this.setState({
       [name]: value,
-    }, () => {
-      if (this.state.agency_name && this.state.agency_name.length > 1) {
-        // if (this.state.agency_name.length % 2 === 0) {
-        this.SearchApi();
-        // this.props.history.push('/results');
-        // }
-      } else if (this.state.agency_name.length < 1) {
-        this.setState({
-          loaded: false,
-          vendorlists: [],
-        });
-      }
     });
+  }
+
+  onSubmit = (event) => {
+    event.preventDefault();
+    if (this.state.agency_name && this.state.agency_name.length > 1) {
+      this.SearchApi();
+      this.setState({
+        loaded: true,
+      });
+    }
   }
 
   SearchApi = async () => {
@@ -46,15 +39,24 @@ class Search extends React.Component {
       .then((result) => {
         this.setState({
           vendorlists: result.data.vendor,
-          loaded: true,
         }, console.log(result.data));
       });
   }
 
   render() {
-    const { vendorlists, agency_name } = this.state;
+    const { vendorlists, loaded } = this.state;
 
-    if (agency_name.length > 3) {
+    if (loaded) {
+      if (vendorlists.length == 0) {
+        return <Loader
+        className='loader'
+        type="Puff"
+        color="#00BFFF"
+        height={80}
+        width={80}
+        timeout={10000}
+   />;
+      }
       return <Redirect to={{
         pathname: '/results',
         vendorlists,
@@ -63,8 +65,8 @@ class Search extends React.Component {
     }
 
     return (
-      <div className='login_main_div'>
-        <form onSubmit={this.onSubmit}>
+      <div>
+        <form className="search-form" onSubmit={this.onSubmit}>
         <div>
         <input
           type="agency_name"
@@ -74,6 +76,7 @@ class Search extends React.Component {
           onChange={this.handleInputChange}
           required
         />
+        <button type="submit"> <FontAwesomeIcon icon={faSearch} /></button>
         </div>
         {/* <div>
        <input className="button" type="submit" value="Search" />
@@ -90,4 +93,4 @@ class Search extends React.Component {
   }
 }
 
-export default withRouter(Search);
+export default Search;

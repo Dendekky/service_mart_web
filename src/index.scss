@@ -106,6 +106,30 @@
     }
 }
 
+.search-form {
+    input {
+        padding: 10px;
+        font-size: 17px;
+        border: 1px solid grey;
+        float: left;
+        width: 80%;
+        background: #f1f1f1;
+    }
+    button {
+    width: 20%;
+    padding: 10px;
+    background: rgb(175, 160, 18);
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none; /* Prevent double borders */
+    cursor: pointer;
+    }
+    button:hover {
+        background: #0b7dda;
+    }
+}
+
 .footer{
     background: rgb(118, 228, 228);
     .footer-group {

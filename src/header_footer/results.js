@@ -13,6 +13,7 @@ class Result extends React.Component {
 
   render() {
     const { vendorlists } = this.state;
+    console.log(vendorlists);
 
     return (
       <div>
