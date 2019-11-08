@@ -111,10 +111,10 @@ export default function Header(props) {
         >
           <div>
           <div className='nav-group'>
-            <Link className="span link"><p>Jobs</p></Link>
             <Link to='/vendorcategory'className="span link"><p>Categories</p></Link>
             <Link to='/login' className="span link"><p>Login</p></Link>
             <Link to='/vendor' className="span link"><p>Become a Vendor</p></Link>
+            <Link className="span link"><p>Post a job</p></Link>
           </div>
             {leftLinks}
             {rightLinks}
