@@ -34,31 +34,31 @@ const useStyles = makeStyles(theme => ({
 const tileData = [
   {
     content:
-    <img className='image' src={'https://source.unsplash.com/random?media'} alt="Event Planner"/>,    
+    <img className='image' src={'https://res.cloudinary.com/dendekky/image/upload/v1578347599/serv-mart/serv-mart/01_dnc44p.png'} alt="Event Planner"/>,
     source: 'Media',
   }, {
     content:
-    <img className='image' src={'https://source.unsplash.com/random?laundry'} alt="Event Planner"/>,
+    <img className='image' src={'https://res.cloudinary.com/dendekky/image/upload/v1578347610/serv-mart/serv-mart/Course_Rep_20170512_192306_h0uwvq.jpg'} alt="Event Planner"/>,
     source: 'Laundry',
   }, {
     content:
-    <img className='image' src={'https://source.unsplash.com/random?medicine'} alt="Event Planner"/>,
+    <img className='image' src={'https://res.cloudinary.com/dendekky/image/upload/v1578348778/serv-mart/serv-mart/Common_Sense_20170422_200323_ctkgwd.jpg'} alt="Event Planner"/>,
     source: 'Medicine',
   }, {
     content:
-    <img className='image' src={'https://source.unsplash.com/random?electronics'} alt="Event Planner"/>,
+    <img className='image' src={'https://res.cloudinary.com/dendekky/image/upload/v1578347599/serv-mart/serv-mart/01_dnc44p.png'} alt="Event Planner"/>,
     source: 'Electronics',
   }, {
     content:
-    <img className='image' src={'https://source.unsplash.com/random?food'} alt="Event Planner"/>,
+    <img className='image' src={'https://res.cloudinary.com/dendekky/image/upload/v1578348921/serv-mart/serv-mart/GIT_RESEARCH_UNIT-_UI_20170425_130231_tjldzi.jpg'} alt="Event Planner"/>,
     source: 'Food',
   }, {
     content:
-    <img className='image' src={'https://source.unsplash.com/random?rentals'} alt="Event Planner"/>,
+    <img className='image' src={'https://res.cloudinary.com/dendekky/image/upload/v1578347616/serv-mart/serv-mart/IMG-20170406-WA0011_m1u341.jpg'} alt="Event Planner"/>,
     source: 'Rentals',
   }, {
     content:
-    <img className='image' src={'https://source.unsplash.com/random?effects'} alt="Event Planner"/>,
+    <img className='image' src={'https://res.cloudinary.com/dendekky/image/upload/v1578347613/serv-mart/serv-mart/7-13_kkvlzn.jpg'} alt="Event Planner"/>,
     source: 'Effects',
   },
 ];
@@ -131,7 +131,7 @@ function Homepage() {
         </div>
 
     </div>
-  )
-};
+  );
+}
 
 export default Homepage;
