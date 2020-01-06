@@ -35,7 +35,7 @@ export default class Login extends Component {
         // Save to localStorage
         // Set token to localStorage
         const { token } = res.data;
-        localStorage.setItem('token', token);
+        sessionStorage.setItem('token', token);
         // Set token to Auth header
         setAuthToken(token);
         if (res.data.status === 200) {
@@ -53,6 +53,13 @@ export default class Login extends Component {
 
   render() {
     const { errMessage } = this.state;
+    const token = sessionStorage.getItem('token');
+
+    if (token) {
+      return (
+          <h4>You are logged in</h4>
+      )
+    }
 
     return (
       <div className='login_main_div'>

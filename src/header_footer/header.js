@@ -67,7 +67,7 @@ export default function Header(props) {
   return (
     <AppBar className={appBarClasses}>
       <Link to='/'>
-       <FontAwesomeIcon icon={faHome} />
+      <img src={'https://res.cloudinary.com/dendekky/image/upload/v1578347591/serv-mart/serv-mart/05_oexbe2.png'} alt="Event Planner"/>
          </Link>
       <Toolbar className={classes.container}>
         {leftLinks !== undefined ? brandComponent : null}

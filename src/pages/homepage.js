@@ -92,7 +92,7 @@ function Homepage() {
             <h1>Explore Categories</h1>
             {/* <Carousel slides={carouselSlidesData} /> */}
             <div className={classes.root}>
-              <GridList className={classes.gridList} cols={2.5}>
+              <GridList className={classes.gridList} cols={5.5}>
                 {tileData.map(tile => (
                   <GridListTile key={tile.source}>
                     {tile.content}
