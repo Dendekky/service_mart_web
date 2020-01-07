@@ -68,10 +68,11 @@
     }
 }
 
-.image {
-    height: 150px;
-    width: 150px;
-}
+// .image {
+//     height: 150px;
+//     width: 150px;
+// }
+
 
 .login_main_div{
     display: flex;
@@ -162,7 +163,7 @@ h1{
 }
 
 .landing_page_body_div1 {
-    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("https://source.unsplash.com/random");
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("https://res.cloudinary.com/dendekky/image/upload/v1578347599/serv-mart/serv-mart/06_fvpjn7.jpg");
     height: 300px; 
     background-size: cover;
     position: relative;

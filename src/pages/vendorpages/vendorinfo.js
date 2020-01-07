@@ -37,7 +37,7 @@ class VendorInfo extends React.Component {
 
     return (
         <div className='VendorInfo'>
-            <img className='vendor-images' src={'https://source.unsplash.com/random?effects'}/>
+            <img className='vendor-images' src={'https://res.cloudinary.com/dendekky/image/upload/v1578347596/serv-mart/serv-mart/02_qknblf.png'}/>
             <h1>{vendor.agency_name}</h1>
             <p>{vendor.service_category}</p>
             <p>{vendor.location}</p>
@@ -50,6 +50,6 @@ class VendorInfo extends React.Component {
         </div>
     );
   }
-};
+}
 
 export default VendorInfo;
